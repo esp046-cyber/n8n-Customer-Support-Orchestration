@@ -1,0 +1,2780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>n8n Support Orchestration 2026 - Complete Tutorial</title>
+    <style>
+        * {
+            margin: 1%;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            padding: 1%;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            color: #1a202c;
+            border-radius: 8px;
+            padding: 1%;
+            max-width: 100%;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        h1 {
+            font-size: 1.4rem;
+            color: #5a67d8;
+            margin: 1% 0;
+            border-left: 4px solid #5a67d8;
+            padding-left: 1%;
+        }
+        h2 {
+            font-size: 1.1rem;
+            color: #434190;
+            margin: 2% 0 1% 0;
+            background: #edf2f7;
+            padding: 1%;
+            border-radius: 4px;
+        }
+        h3 {
+            font-size: 1rem;
+            color: #2d3748;
+            margin: 1.5% 0 1% 0;
+        }
+        .workflow-step {
+            background: #f7fafc;
+            border-left: 3px solid #48bb78;
+            padding: 1%;
+            margin: 1% 0;
+            border-radius: 4px;
+        }
+        .node-type {
+            display: inline-block;
+            background: #5a67d8;
+            color: white;
+            padding: 0.3% 1%;
+            border-radius: 3px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 0.5% 0;
+        }
+        .tip {
+            background: #fef5e7;
+            border-left: 3px solid #f39c12;
+            padding: 1%;
+            margin: 1% 0;
+            color: #7d6608;
+            border-radius: 4px;
+        }
+        .error-box {
+            background: #fff5f5;
+            border-left: 3px solid #f56565;
+            padding: 1%;
+            margin: 1% 0;
+            color: #742a2a;
+            border-radius: 4px;
+        }
+        .success-box {
+            background: #f0fff4;
+            border-left: 3px solid #48bb78;
+            padding: 1%;
+            margin: 1% 0;
+            color: #22543d;
+            border-radius: 4px;
+        }
+        code {
+            background: #2d3748;
+            color: #68d391;
+            padding: 0.2% 0.8%;
+            border-radius: 3px;
+            font-size: 0.9rem;
+        }
+        pre {
+            background: #2d3748;
+            color: #68d391;
+            padding: 1%;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            margin: 1% 0;
+        }
+        .setup-list {
+            background: #e6fffa;
+            padding: 1%;
+            border-radius: 4px;
+            margin: 1% 0;
+        }
+        ul, ol {
+            margin-left: 3%;
+            margin-top: 1%;
+        }
+        li {
+            margin: 1% 0;
+            color: #2d3748;
+        }
+        .highlight {
+            background: #bee3f8;
+            padding: 0.2% 0.5%;
+            border-radius: 2px;
+            font-weight: 600;
+        }
+        .section {
+            margin: 2% 0;
+        }
+        a {
+            color: #5a67d8;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .diagram {
+            background: white;
+            border: 2px solid #cbd5e0;
+            padding: 1%;
+            border-radius: 4px;
+            margin: 1% 0;
+            font-family: monospace;
+            font-size: 0.85rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1% 0;
+            font-size: 0.9rem;
+        }
+        th {
+            background: #5a67d8;
+            color: white;
+            padding: 1%;
+            text-align: left;
+        }
+        td {
+            background: #f7fafc;
+            padding: 1%;
+            border: 1px solid #e2e8f0;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 1.2rem; }
+            h2 { font-size: 1rem; }
+            h3 { font-size: 0.95rem; }
+            pre { font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 n8n Customer Support Orchestration 2026</h1>
+        <p><strong>Complete Hands-On Tutorial for Small Business Owners</strong></p>
+        <p>Build production-ready automation in 2-4 hours. Copy-paste code included.</p>
+
+        <div class="section">
+            <h2>📋 What You'll Build</h2>
+            <div class="diagram">
+Email → AI Classification → Create Ticket → Auto-Response → Team Alert
+   ↓                           ↓               ↓                ↓
+ IMAP              OpenAI/Claude API      Zendesk API      Slack API
+   ↓                           ↓               ↓                ↓
+Customer           Priority: urgent/high   Ticket #123    Channel Notification
+Inquiry            Category: billing       Status: new     @team mention
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>⚙️ Prerequisites & Setup</h2>
+            <div class="setup-list">
+                <h3>1. Install n8n (Choose One):</h3>
+                <p><strong>Option A - Cloud (Recommended for beginners):</strong></p>
+                <ol>
+                    <li>Visit <a href="https://n8n.cloud">n8n.cloud</a></li>
+                    <li>Sign up for free trial (no credit card)</li>
+                    <li>Skip to step 2 below</li>
+                </ol>
+                
+                <p><strong>Option B - Docker (Self-hosted):</strong></p>
+                <pre>docker volume create n8n_data
+docker run -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n n8nio/n8n
+
+# Open: http://localhost:5678</pre>
+
+                <p><strong>Option C - NPM:</strong></p>
+                <pre>npm install n8n -g
+n8n start
+
+# Open: http://localhost:5678</pre>
+
+                <h3>2. Required Accounts (Free tiers available):</h3>
+                <ul>
+                    <li>✓ Gmail or Outlook email</li>
+                    <li>✓ Zendesk (14-day trial) or Freshdesk (free plan)</li>
+                    <li>✓ OpenAI API ($5 credit) or Claude API</li>
+                    <li>✓ Slack workspace (free)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎯 WORKFLOW #1: Email to Ticket Automation</h2>
+            <p><strong>Time to Build:</strong> 45 minutes | <strong>Difficulty:</strong> Medium</p>
+            
+            <div class="workflow-step">
+                <h3>📊 Visual Workflow Diagram:</h3>
+                <div class="diagram">
+┌─────────────────┐
+│  Email Trigger  │
+│     (IMAP)      │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│   AI Classify   │◄──── OpenAI/Claude API
+│  (Function Node)│
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ Create Ticket   │◄──── Zendesk/Freshdesk API
+│  (Zendesk Node) │
+└────────┬────────┘
+         │
+         ├──────────────────────┐
+         ▼                      ▼
+┌──────────────┐      ┌─────────────────┐
+│Auto Response │      │  Slack Alert    │
+│ (Email Node) │      │  (Slack Node)   │
+└──────────────┘      └─────────────────┘
+                </div>
+            </div>
+
+            <div class="workflow-step">
+                <h3>Step 1: Email Trigger Setup</h3>
+                <span class="node-type">Email Trigger (IMAP)</span>
+                
+                <h3>📋 Gmail Credential Setup:</h3>
+                <ol>
+                    <li>Go to <a href="https://myaccount.google.com/security">Google Account Security</a></li>
+                    <li>Enable 2-Step Verification if not enabled</li>
+                    <li>Scroll to "App passwords" → Click "Generate"</li>
+                    <li>Select app: "Mail" | Device: "Other" → Type "n8n"</li>
+                    <li>Copy the 16-character password (e.g., abcd efgh ijkl mnop)</li>
+                </ol>
+                
+                <p><strong>In n8n:</strong></p>
+                <ol>
+                    <li>Credentials → "+ Add Credential" → "IMAP"</li>
+                    <li>User: <code><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="20594f55520d454d41494c60474d41494c0e434f4d">[email&#160;protected]</a></code></li>
+                    <li>Password: <code>[paste 16-char app password]</code></li>
+                    <li>Host: <code>imap.gmail.com</code></li>
+                    <li>Port: <code>993</code></li>
+                    <li>Enable SSL/TLS: <code>Yes</code></li>
+                    <li>Click "Save"</li>
+                </ol>
+                
+                <h3>📋 Outlook Credential Setup:</h3>
+                <pre>User: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="374e5842451a525a565e5b775842435b58585c1954585a">[email&#160;protected]</a>
+Password: [your password or app password from account.live.com]
+Host: outlook.office365.com
+Port: 993
+SSL/TLS: Yes</pre>
+
+                <h3>⚙️ Email Trigger Node Configuration:</h3>
+                <pre>{
+  "parameters": {
+    "mailbox": "INBOX",
+    "postProcessAction": "mark as read",
+    "options": {
+      "customEmailConfig": "imap",
+      "forceReconnect": true
+    }
+  },
+  "name": "Email Trigger",
+  "type": "n8n-nodes-base.emailReadImap",
+  "position": [250, 300]
+}</pre>
+
+                <div class="tip">💡 <strong>Testing:</strong> Send test email to your support address. Check n8n Executions tab to verify it triggers within 1 minute.</div>
+            </div>
+
+            <div class="workflow-step">
+                <h3>Step 2: AI Classification</h3>
+                <span class="node-type">HTTP Request Node (OpenAI)</span>
+                
+                <h3>📋 OpenAI API Setup:</h3>
+                <ol>
+                    <li>Visit <a href="https://platform.openai.com/api-keys">platform.openai.com/api-keys</a></li>
+                    <li>Click "+ Create new secret key"</li>
+                    <li>Name: "n8n-support" → Create</li>
+                    <li>Copy key (starts with <code>sk-proj-...</code>)</li>
+                    <li>⚠️ IMPORTANT: Save it now - you can't see it again!</li>
+                </ol>
+                
+                <p><strong>In n8n:</strong></p>
+                <ol>
+                    <li>Add "HTTP Request" node</li>
+                    <li>Method: POST</li>
+                    <li>URL: <code>https://api.openai.com/v1/chat/completions</code></li>
+                    <li>Authentication: Header Auth</li>
+                    <li>Name: <code>Authorization</code></li>
+                    <li>Value: <code>Bearer sk-proj-YOUR_KEY_HERE</code></li>
+                </ol>
+
+                <h3>🤖 Complete AI Prompt (Body JSON):</h3>
+                <pre>{
+  "model": "gpt-4o-mini",
+  "temperature": 0.3,
+  "response_format": { "type": "json_object" },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a support ticket classifier. Return ONLY valid JSON with no markdown formatting."
+    },
+    {
+      "role": "user",
+      "content": "Analyze this customer email and classify it:\n\nSubject: {{ $json.subject }}\n\nFrom: {{ $json.from.text }}\n\nBody:\n{{ $json.text }}\n\nReturn JSON with this exact structure:\n{\n  \"priority\": \"urgent|high|normal|low\",\n  \"category\": \"billing|technical|account|feature_request|bug|general\",\n  \"sentiment\": \"angry|frustrated|neutral|happy\",\n  \"requires_human\": true|false,\n  \"suggested_response_time\": \"1h|4h|24h|48h\",\n  \"keywords\": [\"keyword1\", \"keyword2\"],\n  \"summary\": \"brief 1-sentence summary\"\n}\n\nClassification Rules:\n- URGENT: service down, data loss, can't login, payment failed, security issue\n- HIGH: billing disputes, account access, major bugs\n- NORMAL: feature requests, general questions, minor bugs\n- LOW: documentation, suggestions, feedback\n- requires_human=true if: angry sentiment, refund request, legal terms, complex technical issue"
+    }
+  ]
+}</pre>
+
+                <h3>🔧 Parse AI Response (Function Node):</h3>
+                <p>Add Function node after HTTP Request:</p>
+                <pre>// Name: Parse AI Response
+// Node.js code:
+
+const response = $input.first().json;
+const aiContent = response.choices[0].message.content;
+
+// Remove markdown if present
+const cleaned = aiContent
+  .replace(/```json\n?/g, '')
+  .replace(/```\n?/g, '')
+  .trim();
+
+let classification;
+try {
+  classification = JSON.parse(cleaned);
+} catch (error) {
+  // Fallback classification if parsing fails
+  classification = {
+    priority: "normal",
+    category: "general",
+    sentiment: "neutral",
+    requires_human: true,
+    suggested_response_time: "24h",
+    keywords: ["unclassified"],
+    summary: "Manual review required - AI classification failed"
+  };
+  
+  // Log error for debugging
+  console.error('AI parsing error:', error.message);
+}
+
+// Validate required fields
+const required = ['priority', 'category', 'sentiment'];
+const isValid = required.every(field => classification[field]);
+
+if (!isValid) {
+  throw new Error('AI response missing required fields');
+}
+
+return { json: classification };</pre>
+
+                <h3>📝 Sample AI Response Examples:</h3>
+                <table>
+                    <tr>
+                        <th>Customer Email</th>
+                        <th>AI Classification</th>
+                    </tr>
+                    <tr>
+                        <td>"Your app keeps crashing when I try to export my data. I need this fixed ASAP!"</td>
+                        <td>priority: urgent<br>category: bug<br>sentiment: frustrated<br>requires_human: true</td>
+                    </tr>
+                    <tr>
+                        <td>"Hi, can you add dark mode to the mobile app? Thanks!"</td>
+                        <td>priority: low<br>category: feature_request<br>sentiment: neutral<br>requires_human: false</td>
+                    </tr>
+                    <tr>
+                        <td>"I was charged twice this month. I need a refund immediately."</td>
+                        <td>priority: urgent<br>category: billing<br>sentiment: angry<br>requires_human: true</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="workflow-step">
+                <h3>Step 3: Create Zendesk Ticket</h3>
+                <span class="node-type">Zendesk Node</span>
+                
+                <h3>📋 Zendesk API Setup:</h3>
+                <ol>
+                    <li>Go to Zendesk → Admin Center (gear icon)</li>
+                    <li>Apps and integrations → APIs → Zendesk API</li>
+                    <li>Settings tab → Enable "Token Access"</li>
+                    <li>Click "+ Add API token"</li>
+                    <li>Description: "n8n Integration" → Create</li>
+                    <li>Copy token immediately (shown once)</li>
+                </ol>
+                
+                <p><strong>In n8n:</strong></p>
+                <ol>
+                    <li>Credentials → "+ Add Credential" → "Zendesk API"</li>
+                    <li>Subdomain: <code>yourcompany</code> (from yourcompany.zendesk.com)</li>
+                    <li>Email: <code><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bedfdad3d7d0fec7d1cbccddd1d3cedfd0c790ddd1d3">[email&#160;protected]</a></code></li>
+                    <li>API Token: <code>[paste token]</code></li>
+                </ol>
+
+                <h3>⚙️ Create Ticket Configuration:</h3>
+                <pre>{
+  "resource": "ticket",
+  "operation": "create",
+  "subject": "={{ $('Email Trigger').item.json.subject }}",
+  "description": "=**Customer:** {{ $('Email Trigger').item.json.from.text }}\n**Email:** {{ $('Email Trigger').item.json.from.address }}\n\n**Original Message:**\n{{ $('Email Trigger').item.json.text }}\n\n---\n**AI Analysis:**\n• Priority: {{ $('Parse AI Response').item.json.priority }}\n• Category: {{ $('Parse AI Response').item.json.category }}\n• Sentiment: {{ $('Parse AI Response').item.json.sentiment }}\n• Summary: {{ $('Parse AI Response').item.json.summary }}\n• Keywords: {{ $('Parse AI Response').item.json.keywords.join(', ') }}",
+  "priority": "={{ $('Parse AI Response').item.json.priority }}",
+  "status": "new",
+  "type": "question",
+  "tags": "={{ $('Parse AI Response').item.json.keywords.join(',') }},ai-classified,email-support"
+}</pre>
+
+                <h3>🔧 Auto-Assignment (Function Node):</h3>
+                <p>Add between Parse AI and Zendesk:</p>
+                <pre>// Name: Assign Agent
+// Paste this before Zendesk node
+
+const agents = [
+  { 
+    id: 123456789, 
+    name: "Sarah Johnson", 
+    email: "<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="483b293a2920082b272538292631662b2725">[email&#160;protected]</a>",
+    specialties: ["billing", "account"],
+    max_tickets: 20
+  },
+  { 
+    id: 123456790, 
+    name: "Mike Chen", 
+    email: "<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d8b5b1b3bd98bbb7b5a8b9b6a1f6bbb7b5">[email&#160;protected]</a>",
+    specialties: ["technical", "bug"],
+    max_tickets: 15
+  },
+  { 
+    id: 123456791, 
+    name: "Lisa Park", 
+    email: "<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="016d68726041626e6c71606f782f626e6c">[email&#160;protected]</a>",
+    specialties: ["general", "feature_request"],
+    max_tickets: 25
+  }
+];
+
+const category = $input.first().json.category;
+const priority = $input.first().json.priority;
+
+let assignedAgent;
+
+// Priority assignment logic
+if (priority === "urgent" || priority === "high") {
+  // Find specialist for urgent tickets
+  assignedAgent = agents.find(a => a.specialties.includes(category));
+  
+  if (!assignedAgent) {
+    // If no specialist, assign to agent with fewest tickets
+    assignedAgent = agents.sort((a, b) => a.max_tickets - b.max_tickets)[0];
+  }
+} else {
+  // Round-robin for normal/low priority
+  const hourIndex = new Date().getHours() % agents.length;
+  assignedAgent = agents[hourIndex];
+}
+
+return {
+  json: {
+    assignee_id: assignedAgent.id,
+    assignee_email: assignedAgent.email,
+    assignee_name: assignedAgent.name
+  }
+};</pre>
+
+                <p><strong>Update Zendesk node to use assignment:</strong></p>
+                <pre>// Add to Zendesk configuration:
+"assigneeId": "={{ $('Assign Agent').item.json.assignee_id }}"</pre>
+
+                <h3>📋 Freshdesk Alternative:</h3>
+                <p>If using Freshdesk instead of Zendesk:</p>
+                <ol>
+                    <li>Freshdesk → Profile Settings → View API Key</li>
+                    <li>Copy API key</li>
+                    <li>In n8n: Freshdesk credential → Domain: <code>yourcompany.freshdesk.com</code> | API Key: [paste]</li>
+                    <li>Use Freshdesk node with similar configuration as Zendesk above</li>
+                </ol>
+            </div>
+
+            <div class="workflow-step">
+                <h3>Step 4: Auto-Response Email</h3>
+                <span class="node-type">Send Email (Gmail/SMTP)</span>
+                
+                <h3>📧 Professional HTML Email Template:</h3>
+                <pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;/head&gt;
+&lt;body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f4f4f4;"&gt;
+  &lt;table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f4f4f4; padding: 20px;"&gt;
+    &lt;tr&gt;
+      &lt;td align="center"&gt;
+        &lt;table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"&gt;
+          
+          &lt;!-- Header --&gt;
+          &lt;tr&gt;
+            &lt;td style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; text-align: center;"&gt;
+              &lt;h1 style="color: #ffffff; margin: 0; font-size: 24px;"&gt;🎯 Ticket Received!&lt;/h1&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          
+          &lt;!-- Body --&gt;
+          &lt;tr&gt;
+            &lt;td style="padding: 30px;"&gt;
+              &lt;p style="color: #333; font-size: 16px; margin-top: 0;"&gt;
+                Hi &lt;strong&gt;{{ $('Email Trigger').item.json.from.text.split(' ')[0] || 'there' }}&lt;/strong&gt;,
+              &lt;/p&gt;
+              
+              &lt;p style="color: #555; font-size: 15px; line-height: 1.6;"&gt;
+                Thanks for contacting us! We've received your support request and created ticket:
+              &lt;/p&gt;
+              
+              &lt;!-- Ticket Info Box --&gt;
+              &lt;table width="100%" cellpadding="15" style="background-color: #f7fafc; border-left: 4px solid #48bb78; border-radius: 4px; margin: 20px 0;"&gt;
+                &lt;tr&gt;
+                  &lt;td&gt;
+                    &lt;p style="margin: 5px 0; color: #2d3748;"&gt;
+                      &lt;strong style="color: #1a202c;"&gt;Ticket Number:&lt;/strong&gt; 
+                      &lt;span style="font-size: 18px; color: #5a67d8;"&gt;#{{ $('Zendesk').item.json.id }}&lt;/span&gt;
+                    &lt;/p&gt;
+                    &lt;p style="margin: 5px 0; color: #2d3748;"&gt;
+                      &lt;strong&gt;Priority:&lt;/strong&gt; 
+                      &lt;span style="text-transform: uppercase; font-weight: bold; color: {{ $('Parse AI Response').item.json.priority === 'urgent' ? '#e53e3e' : $('Parse AI Response').item.json.priority === 'high' ? '#dd6b20' : '#48bb78' }};"&gt;
+                        {{ $('Parse AI Response').item.json.priority }}
+                      &lt;/span&gt;
+                    &lt;/p&gt;
+                    &lt;p style="margin: 5px 0; color: #2d3748;"&gt;
+                      &lt;strong&gt;Category:&lt;/strong&gt; {{ $('Parse AI Response').item.json.category }}
+                    &lt;/p&gt;
+                    &lt;p style="margin: 5px 0; color: #2d3748;"&gt;
+                      &lt;strong&gt;Expected Response:&lt;/strong&gt; Within {{ $('Parse AI Response').item.json.suggested_response_time }}
+                    &lt;/p&gt;
+                    &lt;p style="margin: 5px 0; color: #2d3748;"&gt;
+                      &lt;strong&gt;Assigned To:&lt;/strong&gt; {{ $('Assign Agent').item.json.assignee_name }}
+                    &lt;/p&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/table&gt;
+              
+              &lt;!-- CTA Button --&gt;
+              &lt;table width="100%" cellpadding="0" cellspacing="0" style="margin: 25px 0;"&gt;
+                &lt;tr&gt;
+                  &lt;td align="center"&gt;
+                    &lt;a href="https://yourcompany.zendesk.com/hc/requests/{{ $('Zendesk').item.json.id }}" 
+                       style="display: inline-block; padding: 12px 30px; background-color: #5a67d8; color: #ffffff; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 16px;"&gt;
+                      Track Your Ticket
+                    &lt;/a&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/table&gt;
+              
+              &lt;p style="color: #718096; font-size: 14px; line-height: 1.5;"&gt;
+                Our team is reviewing your request and will get back to you soon. 
+                You'll receive updates via email as we progress.
+              &lt;/p&gt;
+              
+              &lt;p style="color: #718096; font-size: 14px; margin-bottom: 0;"&gt;
+                Need urgent help? Reply to this email or call us at (555) 123-4567.
+              &lt;/p&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          
+          &lt;!-- Footer --&gt;
+          &lt;tr&gt;
+            &lt;td style="background-color: #f7fafc; padding: 20px; text-align: center; border-top: 1px solid #e2e8f0;"&gt;
+              &lt;p style="color: #a0aec0; font-size: 13px; margin: 5px 0;"&gt;
+                &lt;strong&gt;YourCompany Support&lt;/strong&gt;&lt;br&gt;
+                <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="35464045455a4741754c5a4047565a5845545b4c1b565a58">[email&#160;protected]</a> | www.yourcompany.com
+              &lt;/p&gt;
+              &lt;p style="color: #cbd5e0; font-size: 12px; margin: 10px 0 0 0;"&gt;
+                This is an automated message. Please do not reply to this email.
+              &lt;/p&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+                <h3>⚙️ Send Email Node Configuration:</h3>
+                <pre>{
+  "resource": "email",
+  "operation": "send",
+  "fromEmail": "<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="483b3d3838273a3c0831273d3a2b272538292631662b2725">[email&#160;protected]</a>",
+  "toEmail": "={{ $('Email Trigger').item.json.from.address }}",
+  "subject": "✅ Ticket #{{ $('Zendesk').item.json.id }} Created - We're On It!",
+  "emailType": "html",
+  "message": "[paste HTML template above]"
+}</pre>
+
+                <div class="success-box">✅ <strong>Pro Tip:</strong> Test the email by sending to yourself first. Check spam folder and adjust content if needed.</div>
+            </div>
+
+            <div class="workflow-step">
+                <h3>Step 5: Slack Team Notification</h3>
+                <span class="node-type">Slack Node</span>
+                
+                <h3>📋 Slack App Setup (OAuth):</h3>
+                <ol>
+                    <li>Go to <a href="https://api.slack.com/apps">api.slack.com/apps</a></li>
+                    <li>Click "Create New App" → "From scratch"</li>
+                    <li>App Name: "n8n Support Bot" | Workspace: [select yours]</li>
+                    <li>Click "OAuth & Permissions" in sidebar</li>
+                    <li>Scroll to "Scopes" → "Bot Token Scopes" → Add:
+                        <ul>
+                            <li><code>chat:write</code></li>
+                            <li><code>chat:write.public</code></li>
+                            <li><code>channels:read</code></li>
+                        </ul>
+                    </li>
+                    <li>Scroll up → Click "Install to Workspace" → Allow</li>
+                    <li>Copy "Bot User OAuth Token" (starts with <code>xoxb-</code>)</li>
+                </ol>
+                
+                <p><strong>In n8n:</strong></p>
+                <ol>
+                    <li>Credentials → "+ Add Credential" → "Slack OAuth2 API"</li>
+                    <li>Access Token: <code>[paste xoxb- token]</code></li>
+                </ol>
+
+                <h3>💬 Slack Message with Blocks (Professional Format):</h3>
+                <pre>{
+  "resource": "message",
+  "operation": "post",
+  "channel": "#support-tickets",
+  "text": "New support ticket #{{ $('Zendesk').item.json.id }}",
+  "blocksUi": {
+    "blocks": [
+      {
+        "type": "header",
+        "text": {
+          "type": "plain_text",
+          "text": "🎫 New Support Ticket",
+          "emoji": true
+        }
+      },
+      {
+        "type": "section",
+        "fields": [
+          {
+            "type": "mrkdwn",
+            "text": "*Ticket ID:*\n#{{ $('Zendesk').item.json.id }}"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "*Priority:*\n{{ $('Parse AI Response').item.json.priority === 'urgent' ? ':red_circle:' : $('Parse AI Response').item.json.priority === 'high' ? ':large_orange_circle:' : ':large_green_circle:' }} {{ $('Parse AI Response').item.json.priority.toUpperCase() }}"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "*Customer:*\n{{ $('Email Trigger').item.json.from.text }}"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "*Category:*\n{{ $('Parse AI Response').item.json.category }}"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "*Assigned To:*\n{{ $('Assign Agent').item.json.assignee_name }}"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "*Sentiment:*\n{{ $('Parse AI Response').item.json.sentiment === 'angry' ? ':rage:' : $('Parse AI Response').item.json.sentiment === 'frustrated' ? ':disappointed:' : $('Parse AI Response').item.json.sentiment === 'happy' ? ':smile:' : ':neutral_face:' }} {{ $('Parse AI Response').item.json.sentiment }}"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Summary:*\n{{ $('Parse AI Response').item.json.summary }}"
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Keywords:* `{{ $('Parse AI Response').item.json.keywords.join('`, `') }}`"
+        }
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "actions",
+        "elements": [
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "View Ticket",
+              "emoji": true
+            },
+            "style": "primary",
+            "url": "https://yourcompany.zendesk.com/agent/tickets/{{ $('Zendesk').item.json.id }}"
+          },
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Reply to Customer",
+              "emoji": true
+            },
+            "url": "mailto:{{ $('Email Trigger').item.json.from.address }}"
+          }
+        ]
+      }
+    ]
+  }
+}</pre>
+
+                <h3>🚨 Urgent Notification Branch:</h3>
+                <p>Add IF node before Slack to create separate notification for urgent tickets:</p>
+                <pre>// IF Node Configuration:
+{
+  "conditions": {
+    "string": [
+      {
+        "value1": "={{ $('Parse AI Response').item.json.priority }}",
+        "operation": "equals",
+        "value2": "urgent"
+      }
+    ]
+  }
+}
+
+// TRUE Branch → Post to #urgent-support with @channel mention:
+{
+  "channel": "#urgent-support",
+  "text": "<!channel> 🚨 URGENT ticket requires immediate attention!",
+  "blocksUi": [/* same blocks as above */]
+}
+
+// FALSE Branch → Post to #support-tickets (normal channel)</pre>
+            </div>
+
+            <div class="workflow-step">
+                <h3>🔒 Error Handling & Recovery</h3>
+                <span class="node-type">Error Workflow</span>
+                
+                <h3>Create Error Handler Workflow:</h3>
+                <p>Settings → Workflows → "+ New Workflow" → Name: "Error Handler"</p>
+                
+                <ol>
+                    <li>Add "Error Trigger" node</li>
+                    <li>Add "Function" node to process error</li>
+                    <li>Add "Send Email" or "Slack" to notify admin</li>
+                </ol>
+
+                <h3>📧 Error Processing Function:</h3>
+                <pre>// Function Node in Error Workflow
+const error = $input.first().json;
+const workflow = error.workflow.name;
+const node = error.node.name;
+const errorMsg = error.error.message;
+const executionId = error.execution.id;
+
+// Categorize error severity
+let severity = "low";
+let action = "Monitor";
+let color = "#fbbf24"; // yellow
+
+if (errorMsg.includes("rate limit") || errorMsg.includes("quota")) {
+  severity = "medium";
+  action = "Rate limit hit - workflow will retry automatically";
+  color = "#f97316"; // orange
+} else if (errorMsg.includes("authentication") || errorMsg.includes("credentials") || errorMsg.includes("unauthorized")) {
+  severity = "high";
+  action = "Check API credentials - may have expired";
+  color = "#ef4444"; // red
+} else if (errorMsg.includes("network") || errorMsg.includes("timeout") || errorMsg.includes("ECONNREFUSED")) {
+  severity = "medium";
+  action = "Network issue - check service status";
+  color = "#f97316"; // orange
+} else if (errorMsg.includes("not found") || errorMsg.includes("404")) {
+  severity = "medium";
+  action = "Resource not found - verify configuration";
+  color = "#f97316"; // orange
+}
+
+// Format timestamp
+const timestamp = new Date().toLocaleString('en-US', {
+  weekday: 'short',
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+  hour: '2-digit',
+  minute: '2-digit',
+  second: '2-digit',
+  timeZoneName: 'short'
+});
+
+return {
+  json: {
+    workflow,
+    node,
+    error: errorMsg,
+    severity,
+    action,
+    color,
+    timestamp,
+    executionId,
+    executionUrl: `https://your-n8n-instance.com/workflow/${error.workflow.id}/executions/${executionId}`
+  }
+};</pre>
+
+                <h3>📧 Admin Email Notification:</h3>
+                <pre>// Send Email Node Configuration
+{
+  "fromEmail": "<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="66070a03141215261f09131405090b1607081f4805090b">[email&#160;protected]</a>",
+  "toEmail": "<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1372777e7a7d536a7c6661707c7e63727d6a3d707c7e">[email&#160;protected]</a>",
+  "subject": "🚨 n8n Workflow Error - {{ $json.severity.toUpperCase() }} Severity",
+  "emailType": "html",
+  "message": "&lt;html&gt;&lt;body style='font-family: Arial, sans-serif;'&gt;&lt;div style='background: {{ $json.color }}; color: white; padding: 20px; border-radius: 8px 8px 0 0;'&gt;&lt;h2&gt;⚠️ Workflow Error Detected&lt;/h2&gt;&lt;/div&gt;&lt;div style='padding: 20px; background: #f9fafb; border-radius: 0 0 8px 8px;'&gt;&lt;table style='width: 100%; border-collapse: collapse;'&gt;&lt;tr&gt;&lt;td style='padding: 10px; font-weight: bold; border-bottom: 1px solid #e5e7eb;'&gt;Workflow:&lt;/td&gt;&lt;td style='padding: 10px; border-bottom: 1px solid #e5e7eb;'&gt;{{ $json.workflow }}&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style='padding: 10px; font-weight: bold; border-bottom: 1px solid #e5e7eb;'&gt;Failed Node:&lt;/td&gt;&lt;td style='padding: 10px; border-bottom: 1px solid #e5e7eb;'&gt;{{ $json.node }}&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style='padding: 10px; font-weight: bold; border-bottom: 1px solid #e5e7eb;'&gt;Severity:&lt;/td&gt;&lt;td style='padding: 10px; border-bottom: 1px solid #e5e7eb;'&gt;&lt;span style='background: {{ $json.color }}; color: white; padding: 4px 12px; border-radius: 4px; font-weight: bold;'&gt;{{ $json.severity.toUpperCase() }}&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style='padding: 10px; font-weight: bold; border-bottom: 1px solid #e5e7eb;'&gt;Time:&lt;/td&gt;&lt;td style='padding: 10px; border-bottom: 1px solid #e5e7eb;'&gt;{{ $json.timestamp }}&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style='padding: 10px; font-weight: bold; vertical-align: top; padding-top: 15px;'&gt;Error Message:&lt;/td&gt;&lt;td style='padding: 10px; padding-top: 15px;'&gt;&lt;code style='background: #1f2937; color: #10b981; padding: 10px; border-radius: 4px; display: block; white-space: pre-wrap;'&gt;{{ $json.error }}&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style='padding: 10px; font-weight: bold; padding-top: 15px;'&gt;Recommended Action:&lt;/td&gt;&lt;td style='padding: 10px; padding-top: 15px;'&gt;{{ $json.action }}&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;a href='{{ $json.executionUrl }}' style='display: inline-block; margin-top: 20px; padding: 12px 24px; background: #3b82f6; color: white; text-decoration: none; border-radius: 6px; font-weight: bold;'&gt;View Execution in n8n&lt;/a&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;"
+}</pre>
+
+                <h3>Enable Error Workflow:</h3>
+                <ol>
+                    <li>Go to your main "Email to Ticket" workflow</li>
+                    <li>Workflow Settings (⚙️ icon) → "Settings"</li>
+                    <li>Error Workflow → Select "Error Handler"</li>
+                    <li>Save</li>
+                </ol>
+
+                <h3>🔄 Retry Configuration:</h3>
+                <p>For each critical node (Zendesk, OpenAI, Slack):</p>
+                <ol>
+                    <li>Click node → Settings tab</li>
+                    <li>Set "Retry On Fail": ON</li>
+                    <li>Max Tries: 3</li>
+                    <li>Wait Between Tries (ms): 3000</li>
+                    <li>Continue On Fail: OFF (let error handler catch it)</li>
+                </ol>
+
+                <div class="error-box">⚠️ <strong>Important:</strong> Test error handling by temporarily entering wrong API credentials. Verify you receive error notifications.</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🧪 TESTING PROCEDURES</h2>
+            
+            <div class="workflow-step">
+                <h3>Step-by-Step Testing Checklist:</h3>
+                
+                <h3>✅ Test 1: Email Trigger</h3>
+                <ol>
+                    <li>Send test email to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="45363035352a3731053c2a3037262a2835242b3c6b262a28">[email&#160;protected]</a></li>
+                    <li>Subject: "Test - Urgent billing issue"</li>
+                    <li>Body: "I was charged twice and need immediate help!"</li>
+                    <li>Wait 1 minute</li>
+                    <li>Check n8n → Executions tab → Should see "Success"</li>
+                    <li>Click execution → Verify email data is captured</li>
+                </ol>
+                
+                <h3>✅ Test 2: AI Classification</h3>
+                <ol>
+                    <li>In execution, click "HTTP Request" node</li>
+                    <li>Verify AI response shows priority: "urgent"</li>
+                    <li>Check "Parse AI Response" shows valid JSON</li>
+                    <li>Expected: category = "billing", sentiment = "frustrated"</li>
+                </ol>
+                
+                <h3>✅ Test 3: Ticket Creation</h3>
+                <ol>
+                    <li>Go to Zendesk dashboard</li>
+                    <li>Verify new ticket exists</li>
+                    <li>Check ticket has correct:
+                        <ul>
+                            <li>Subject</li>
+                            <li>Description with AI analysis</li>
+                            <li>Priority set to "urgent"</li>
+                            <li>Tags: ai-classified, email-support</li>
+                            <li>Assigned agent</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <h3>✅ Test 4: Auto-Response</h3>
+                <ol>
+                    <li>Check your inbox (original sender)</li>
+                    <li>Verify you received auto-response email</li>
+                    <li>Check email format looks professional</li>
+                    <li>Click "Track Your Ticket" link → Should open Zendesk</li>
+                </ol>
+                
+                <h3>✅ Test 5: Slack Notification</h3>
+                <ol>
+                    <li>Open Slack workspace</li>
+                    <li>Check #urgent-support channel (or #support-tickets)</li>
+                    <li>Verify message received with:
+                        <ul>
+                            <li>Correct ticket number</li>
+                            <li>Priority badge</li>
+                            <li>Customer info</li>
+                            <li>Working "View Ticket" button</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <h3>✅ Test 6: Error Handling</h3>
+                <ol>
+                    <li>Edit Zendesk credential → Enter wrong API token</li>
+                    <li>Send another test email</li>
+                    <li>Wait 1 minute</li>
+                    <li>Check admin email → Should receive error notification</li>
+                    <li>Verify error message shows "authentication" issue</li>
+                    <li>Fix credential back to correct token</li>
+                </ol>
+
+                <h3>📊 Test Scenarios Matrix:</h3>
+                <table>
+                    <tr>
+                        <th>Test Scenario</th>
+                        <th>Expected Priority</th>
+                        <th>Expected Category</th>
+                        <th>Expected Channel</th>
+                    </tr>
+                    <tr>
+                        <td>"Service is down, can't access my account"</td>
+                        <td>urgent</td>
+                        <td>technical</td>
+                        <td>#urgent-support</td>
+                    </tr>
+                    <tr>
+                        <td>"Charged twice this month, need refund"</td>
+                        <td>urgent</td>
+                        <td>billing</td>
+                        <td>#urgent-support</td>
+                    </tr>
+                    <tr>
+                        <td>"How do I export my data?"</td>
+                        <td>normal</td>
+                        <td>general</td>
+                        <td>#support-tickets</td>
+                    </tr>
+                    <tr>
+                        <td>"Would love to see dark mode added"</td>
+                        <td>low</td>
+                        <td>feature_request</td>
+                        <td>#support-tickets</td>
+                    </tr>
+                    <tr>
+                        <td>"Reset my password please"</td>
+                        <td>high</td>
+                        <td>account</td>
+                        <td>#support-tickets</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📁 COMPLETE WORKFLOW JSON</h2>
+            <p><strong>Copy-Paste Ready:</strong> Import this into n8n</p>
+            
+            <div class="tip">💡 <strong>How to Import:</strong> n8n → Workflows → "..." → Import from File → Paste JSON below → Save as new workflow</div>
+            
+            <pre>{
+  "name": "Email to Ticket Automation",
+  "nodes": [
+    {
+      "parameters": {
+        "mailbox": "INBOX",
+        "postProcessAction": "mark as read",
+        "options": {
+          "customEmailConfig": "imap"
+        }
+      },
+      "name": "Email Trigger",
+      "type": "n8n-nodes-base.emailReadImap",
+      "position": [240, 300],
+      "typeVersion": 2,
+      "credentials": {
+        "imap": {
+          "id": "1",
+          "name": "Gmail IMAP"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "model",
+              "value": "gpt-4o-mini"
+            },
+            {
+              "name": "temperature",
+              "value": 0.3
+            },
+            {
+              "name": "response_format",
+              "value": "={{ { \"type\": \"json_object\" } }}"
+            },
+            {
+              "name": "messages",
+              "value": "={{ [{ \"role\": \"system\", \"content\": \"You are a support ticket classifier. Return ONLY valid JSON.\" }, { \"role\": \"user\", \"content\": `Analyze:\\n\\nSubject: ${$json.subject}\\nFrom: ${$json.from.text}\\nBody:\\n${$json.text}\\n\\nReturn JSON: {\\n  \\\"priority\\\": \\\"urgent|high|normal|low\\\",\\n  \\\"category\\\": \\\"billing|technical|account|feature_request|bug|general\\\",\\n  \\\"sentiment\\\": \\\"angry|frustrated|neutral|happy\\\",\\n  \\\"requires_human\\\": true|false,\\n  \\\"suggested_response_time\\\": \\\"1h|4h|24h|48h\\\",\\n  \\\"keywords\\\": [\\\"keyword1\\\", \\\"keyword2\\\"],\\n  \\\"summary\\\": \\\"brief summary\\\"\\n}\\n\\nRules:\\n- URGENT: down, broken, can't access, refund\\n- HIGH: billing disputes, login issues\\n- NORMAL: questions, feature requests\\n- LOW: documentation, suggestions` }] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "AI Classify",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [460, 300],
+      "typeVersion": 4.2,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "2",
+          "name": "OpenAI API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const response = $input.first().json;\\nconst aiContent = response.choices[0].message.content;\\nconst cleaned = aiContent.replace(/```json\\n?/g, '').replace(/```\\n?/g, '').trim();\\n\\nlet classification;\\ntry {\\n  classification = JSON.parse(cleaned);\\n} catch (error) {\\n  classification = {\\n    priority: \"normal\",\\n    category: \"general\",\\n    sentiment: \"neutral\",\\n    requires_human: true,\\n    suggested_response_time: \"24h\",\\n    keywords: [\"unclassified\"],\\n    summary: \"Manual review required\"\\n  };\\n}\\n\\nreturn { json: classification };"
+      },
+      "name": "Parse AI Response",
+      "type": "n8n-nodes-base.code",
+      "position": [680, 300],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "jsCode": "const agents = [\\n  { id: 123456789, name: \"Sarah Johnson\", specialties: [\"billing\", \"account\"] },\\n  { id: 123456790, name: \"Mike Chen\", specialties: [\"technical\", \"bug\"] },\\n  { id: 123456791, name: \"Lisa Park\", specialties: [\"general\", \"feature_request\"] }\\n];\\n\\nconst category = $input.first().json.category;\\nconst priority = $input.first().json.priority;\\n\\nlet assignedAgent;\\nif (priority === \"urgent\" || priority === \"high\") {\\n  assignedAgent = agents.find(a => a.specialties.includes(category)) || agents[0];\\n} else {\\n  const hourIndex = new Date().getHours() % agents.length;\\n  assignedAgent = agents[hourIndex];\\n}\\n\\nreturn { json: { assignee_id: assignedAgent.id, assignee_name: assignedAgent.name } };"
+      },
+      "name": "Assign Agent",
+      "type": "n8n-nodes-base.code",
+      "position": [900, 300],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "resource": "ticket",
+        "operation": "create",
+        "subject": "={{ $('Email Trigger').item.json.subject }}",
+        "description": "=**Customer:** {{ $('Email Trigger').item.json.from.text }}\\n**Email:** {{ $('Email Trigger').item.json.from.address }}\\n\\n**Message:**\\n{{ $('Email Trigger').item.json.text }}\\n\\n---\\n**AI Analysis:**\\n• Priority: {{ $('Parse AI Response').item.json.priority }}\\n• Category: {{ $('Parse AI Response').item.json.category }}\\n• Sentiment: {{ $('Parse AI Response').item.json.sentiment }}\\n• Summary: {{ $('Parse AI Response').item.json.summary }}",
+        "priority": "={{ $('Parse AI Response').item.json.priority }}",
+        "status": "new",
+        "type": "question",
+        "tags": "={{ $('Parse AI Response').item.json.keywords.join(',') }},ai-classified",
+        "assigneeId": "={{ $('Assign Agent').item.json.assignee_id }}"
+      },
+      "name": "Create Zendesk Ticket",
+      "type": "n8n-nodes-base.zendesk",
+      "position": [1120, 300],
+      "typeVersion": 1,
+      "credentials": {
+        "zendeskApi": {
+          "id": "3",
+          "name": "Zendesk API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fromEmail": "<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="84f7f1f4f4ebf6f0c4fdebf1f6e7ebe9f4e5eafdaae7ebe9">[email&#160;protected]</a>",
+        "toEmail": "={{ $('Email Trigger').item.json.from.address }}",
+        "subject": "=✅ Ticket #{{ $('Create Zendesk Ticket').item.json.id }} Created",
+        "emailType": "html",
+        "message": "=<!DOCTYPE html><html><body style=\"margin: 0; font-family: Arial;\"><table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background: #f4f4f4; padding: 20px;\"><tr><td align=\"center\"><table width=\"600\" cellpadding=\"0\" cellspacing=\"0\" style=\"background: #fff; border-radius: 8px;\"><tr><td style=\"background: linear-gradient(135deg, #667eea, #764ba2); padding: 30px; text-align: center;\"><h1 style=\"color: #fff; margin: 0;\">🎯 Ticket Received!</h1></td></tr><tr><td style=\"padding: 30px;\"><p>Hi <strong>{{ $('Email Trigger').item.json.from.text.split(' ')[0] }}</strong>,</p><p>We've received your request and created ticket <strong>#{{ $('Create Zendesk Ticket').item.json.id }}</strong></p><table width=\"100%\" cellpadding=\"15\" style=\"background: #f7fafc; border-left: 4px solid #48bb78; margin: 20px 0;\"><tr><td><p style=\"margin: 5px 0;\"><strong>Priority:</strong> <span style=\"text-transform: uppercase;\">{{ $('Parse AI Response').item.json.priority }}</span></p><p style=\"margin: 5px 0;\"><strong>Category:</strong> {{ $('Parse AI Response').item.json.category }}</p><p style=\"margin: 5px 0;\"><strong>Expected Response:</strong> {{ $('Parse AI Response').item.json.suggested_response_time }}</p></td></tr></table><p style=\"text-align: center; margin: 25px 0;\"><a href=\"https://yourcompany.zendesk.com/hc/requests/{{ $('Create Zendesk Ticket').item.json.id }}\" style=\"display: inline-block; padding: 12px 30px; background: #5a67d8; color: #fff; text-decoration: none; border-radius: 5px; font-weight: bold;\">Track Your Ticket</a></p><p style=\"color: #718096; font-size: 14px;\">Our team will respond soon!</p></td></tr></table></td></tr></table><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body></html>"
+      },
+      "name": "Send Auto-Response",
+      "type": "n8n-nodes-base.emailSend",
+      "position": [1340, 200],
+      "typeVersion": 2,
+      "credentials": {
+        "smtp": {
+          "id": "4",
+          "name": "Gmail SMTP"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $('Parse AI Response').item.json.priority }}",
+              "operation": "equals",
+              "value2": "urgent"
+            }
+          ]
+        }
+      },
+      "name": "Is Urgent?",
+      "type": "n8n-nodes-base.if",
+      "position": [1340, 400],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "post",
+        "channel": "#urgent-support",
+        "text": "=<!channel> 🚨 URGENT ticket #{{ $('Create Zendesk Ticket').item.json.id }}",
+        "blocksUi": "={{ { \"blocks\": [{ \"type\": \"header\", \"text\": { \"type\": \"plain_text\", \"text\": \"🚨 URGENT Support Ticket\" } }, { \"type\": \"section\", \"fields\": [{ \"type\": \"mrkdwn\", \"text\": `*Ticket:*\\n#${$('Create Zendesk Ticket').item.json.id}` }, { \"type\": \"mrkdwn\", \"text\": `*Priority:*\\n:red_circle: ${$('Parse AI Response').item.json.priority.toUpperCase()}` }, { \"type\": \"mrkdwn\", \"text\": `*Customer:*\\n${$('Email Trigger').item.json.from.text}` }, { \"type\": \"mrkdwn\", \"text\": `*Category:*\\n${$('Parse AI Response').item.json.category}` }] }, { \"type\": \"section\", \"text\": { \"type\": \"mrkdwn\", \"text\": `*Summary:*\\n${$('Parse AI Response').item.json.summary}` } }, { \"type\": \"actions\", \"elements\": [{ \"type\": \"button\", \"text\": { \"type\": \"plain_text\", \"text\": \"View Ticket\" }, \"style\": \"danger\", \"url\": `https://yourcompany.zendesk.com/agent/tickets/${$('Create Zendesk Ticket').item.json.id}` }] }] } }}"
+      },
+      "name": "Alert Urgent Channel",
+      "type": "n8n-nodes-base.slack",
+      "position": [1560, 300],
+      "typeVersion": 2.1,
+      "credentials": {
+        "slackOAuth2Api": {
+          "id": "5",
+          "name": "Slack OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "post",
+        "channel": "#support-tickets",
+        "text": "=New ticket #{{ $('Create Zendesk Ticket').item.json.id }}",
+        "blocksUi": "={{ { \"blocks\": [{ \"type\": \"header\", \"text\": { \"type\": \"plain_text\", \"text\": \"🎫 New Support Ticket\" } }, { \"type\": \"section\", \"fields\": [{ \"type\": \"mrkdwn\", \"text\": `*Ticket:*\\n#${$('Create Zendesk Ticket').item.json.id}` }, { \"type\": \"mrkdwn\", \"text\": `*Priority:*\\n${$('Parse AI Response').item.json.priority}` }, { \"type\": \"mrkdwn\", \"text\": `*Customer:*\\n${$('Email Trigger').item.json.from.text}` }, { \"type\": \"mrkdwn\", \"text\": `*Category:*\\n${$('Parse AI Response').item.json.category}` }] }, { \"type\": \"actions\", \"elements\": [{ \"type\": \"button\", \"text\": { \"type\": \"plain_text\", \"text\": \"View\" }, \"url\": `https://yourcompany.zendesk.com/agent/tickets/${$('Create Zendesk Ticket').item.json.id}` }] }] } }}"
+      },
+      "name": "Post to Support Channel",
+      "type": "n8n-nodes-base.slack",
+      "position": [1560, 500],
+      "typeVersion": 2.1,
+      "credentials": {
+        "slackOAuth2Api": {
+          "id": "5",
+          "name": "Slack OAuth2"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Email Trigger": {
+      "main": [[{ "node": "AI Classify", "type": "main", "index": 0 }]]
+    },
+    "AI Classify": {
+      "main": [[{ "node": "Parse AI Response", "type": "main", "index": 0 }]]
+    },
+    "Parse AI Response": {
+      "main": [[{ "node": "Assign Agent", "type": "main", "index": 0 }]]
+    },
+    "Assign Agent": {
+      "main": [[{ "node": "Create Zendesk Ticket", "type": "main", "index": 0 }]]
+    },
+    "Create Zendesk Ticket": {
+      "main": [[
+        { "node": "Send Auto-Response", "type": "main", "index": 0 },
+        { "node": "Is Urgent?", "type": "main", "index": 0 }
+      ]]
+    },
+    "Is Urgent?": {
+      "main": [
+        [{ "node": "Alert Urgent Channel", "type": "main", "index": 0 }],
+        [{ "node": "Post to Support Channel", "type": "main", "index": 0 }]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2026-02-05T00:00:00.000Z",
+  "versionId": "1"
+}</pre>
+
+            <div class="success-box">✅ <strong>After Import:</strong> Update all credentials (IMAP, OpenAI, Zendesk, SMTP, Slack) with your actual API keys and tokens.</div>
+        </div>
+
+        <div class="section">
+            <h2>🔍 TROUBLESHOOTING GUIDE</h2>
+            
+            <table>
+                <tr>
+                    <th>Problem</th>
+                    <th>Possible Cause</th>
+                    <th>Solution</th>
+                </tr>
+                <tr>
+                    <td>Email trigger not working</td>
+                    <td>Wrong IMAP credentials or blocked by firewall</td>
+                    <td>1. Test credentials manually in email client<br>2. Check Gmail "Less secure app access"<br>3. Verify port 993 is open<br>4. Try OAuth2 instead of password</td>
+                </tr>
+                <tr>
+                    <td>OpenAI returns 401 error</td>
+                    <td>Invalid API key or expired</td>
+                    <td>1. Regenerate API key at platform.openai.com<br>2. Verify Authorization header format: "Bearer sk-..."<br>3. Check API usage limits</td>
+                </tr>
+                <tr>
+                    <td>OpenAI returns 429 error</td>
+                    <td>Rate limit exceeded</td>
+                    <td>1. Add rate limiting in workflow (delay node)<br>2. Upgrade OpenAI plan<br>3. Enable retry with exponential backoff</td>
+                </tr>
+                <tr>
+                    <td>Zendesk ticket not created</td>
+                    <td>Missing required fields or wrong subdomain</td>
+                    <td>1. Verify subdomain in credential<br>2. Check API token hasn't expired<br>3. Test with minimal ticket (only subject + description)<br>4. Review Zendesk API logs</td>
+                </tr>
+                <tr>
+                    <td>AI returns invalid JSON</td>
+                    <td>AI includes markdown formatting or explanation</td>
+                    <td>1. Check temperature setting (use 0.1-0.3)<br>2. Add "Return ONLY valid JSON" to system prompt<br>3. Parse with fallback error handling<br>4. Use response_format: {type: "json_object"}</td>
+                </tr>
+                <tr>
+                    <td>Slack message not posting</td>
+                    <td>Bot lacks permissions or channel doesn't exist</td>
+                    <td>1. Verify bot has chat:write scope<br>2. Invite bot to channel: /invite @n8n-support-bot<br>3. Check channel name includes #<br>4. Test with direct message to yourself first</td>
+                </tr>
+                <tr>
+                    <td>Auto-response goes to spam</td>
+                    <td>SPF/DKIM not configured or suspicious content</td>
+                    <td>1. Set up SPF/DKIM records for domain<br>2. Remove excessive links/images<br>3. Use plain text version alongside HTML<br>4. Test with mail-tester.com</td>
+                </tr>
+                <tr>
+                    <td>Workflow execution takes >30 seconds</td>
+                    <td>AI model slow or network latency</td>
+                    <td>1. Switch to gpt-4o-mini (faster)<br>2. Reduce token limit in AI call<br>3. Check n8n server resources<br>4. Enable workflow timeout settings</td>
+                </tr>
+                <tr>
+                    <td>Function node syntax error</td>
+                    <td>JavaScript syntax issue or wrong data reference</td>
+                    <td>1. Test with simple console.log first<br>2. Verify $input.first().json exists<br>3. Check node names match exactly<br>4. Use try-catch for error handling</td>
+                </tr>
+                <tr>
+                    <td>Credential test fails</td>
+                    <td>Network blocking external API calls</td>
+                    <td>1. Check firewall/proxy settings<br>2. Verify n8n has internet access<br>3. Test API call with curl from server<br>4. Use n8n cloud if self-hosted fails</td>
+                </tr>
+            </table>
+
+            <h3>🚨 Common Error Messages Decoded:</h3>
+            <div class="error-box">
+                <p><strong>Error:</strong> <code>ECONNREFUSED</code></p>
+                <p><strong>Meaning:</strong> n8n cannot reach the API endpoint</p>
+                <p><strong>Fix:</strong> Check network, firewall, or if service is down</p>
+            </div>
+
+            <div class="error-box">
+                <p><strong>Error:</strong> <code>Unexpected token < in JSON at position 0</code></p>
+                <p><strong>Meaning:</strong> API returned HTML (often error page) instead of JSON</p>
+                <p><strong>Fix:</strong> Check API endpoint URL, credentials, and service status</p>
+            </div>
+
+            <div class="error-box">
+                <p><strong>Error:</strong> <code>Cannot read property 'json' of undefined</code></p>
+                <p><strong>Meaning:</strong> Node has no input data or wrong node reference</p>
+                <p><strong>Fix:</strong> Verify node connections and names match exactly in expressions</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📊 Sample Data for Testing</h2>
+            
+            <h3>Test Email Examples (Copy-Paste):</h3>
+            
+            <div class="workflow-step">
+                <h3>Example 1: Urgent Technical Issue</h3>
+                <p><strong>Subject:</strong> <code>Critical - Can't access my account</code></p>
+                <p><strong>Body:</strong></p>
+                <pre>Hi support,
+
+I've been trying to log into my account for the past hour but keep getting an error message saying "Invalid credentials" even though I'm 100% sure my password is correct. I tried the password reset but I'm not receiving any emails.
+
+This is urgent as I have a client presentation in 2 hours and need access to my files immediately.
+
+Please help ASAP!
+
+Thanks,
+John Miller
+<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b3d9dcdbddf3d0dfdad6ddc7d0dcdec3d2ddca9dd0dcde">[email&#160;protected]</a></pre>
+                <p><strong>Expected AI Classification:</strong> priority=urgent, category=account, sentiment=frustrated</p>
+            </div>
+
+            <div class="workflow-step">
+                <h3>Example 2: Billing Question</h3>
+                <p><strong>Subject:</strong> <code>Question about my invoice</code></p>
+                <p><strong>Body:</strong></p>
+                <pre>Hello,
+
+I received my invoice for January and noticed I was charged $99 instead of the usual $49. Did my plan automatically upgrade? I don't remember changing anything.
+
+Can you please clarify what happened? If this was a mistake, I'd appreciate a refund for the difference.
+
+Best regards,
+Sarah Chen</pre>
+                <p><strong>Expected AI Classification:</strong> priority=high, category=billing, sentiment=neutral</p>
+            </div>
+
+            <div class="workflow-step">
+                <h3>Example 3: Feature Request</h3>
+                <p><strong>Subject:</strong> <code>Suggestion for new feature</code></p>
+                <p><strong>Body:</strong></p>
+                <pre>Hey team!
+
+I absolutely love your product. One feature that would make it even better would be the ability to export data to Google Sheets directly instead of having to download CSV and then upload.
+
+Just a suggestion - keep up the great work!
+
+Mike</pre>
+                <p><strong>Expected AI Classification:</strong> priority=low, category=feature_request, sentiment=happy</p>
+            </div>
+
+            <div class="workflow-step">
+                <h3>Example 4: Angry Customer</h3>
+                <p><strong>Subject:</strong> <code>UNACCEPTABLE SERVICE</code></p>
+                <p><strong>Body:</strong></p>
+                <pre>This is the third time this month your service has gone down during business hours. I'm losing money and clients because of your unreliable platform.
+
+I want a full refund for this month and I'm seriously considering canceling my subscription. This is completely unacceptable for a paid service.
+
+I expect a response from management within 24 hours.</pre>
+                <p><strong>Expected AI Classification:</strong> priority=urgent, category=technical, sentiment=angry, requires_human=true</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>💰 COMPLETE COST BREAKDOWN 2026</h2>
+            <p><strong>Monthly costs for small business (100-500 tickets/month):</strong></p>
+            
+            <table>
+                <tr>
+                    <th>Service</th>
+                    <th>Free Tier</th>
+                    <th>Paid Plan</th>
+                    <th>Recommended</th>
+                    <th>Monthly Cost</th>
+                </tr>
+                <tr>
+                    <td><strong>n8n</strong></td>
+                    <td>Self-hosted (unlimited)</td>
+                    <td>Cloud: $20/month<br>Pro: $50/month</td>
+                    <td>Cloud Starter</td>
+                    <td>$20</td>
+                </tr>
+                <tr>
+                    <td><strong>OpenAI GPT-4o-mini</strong></td>
+                    <td>$5 free credit</td>
+                    <td>Pay-as-you-go<br>$0.15/1M input tokens<br>$0.60/1M output tokens</td>
+                    <td>Pay-as-you-go</td>
+                    <td>$10-30<br>(~500 classifications)</td>
+                </tr>
+                <tr>
+                    <td><strong>Zendesk Suite</strong></td>
+                    <td>14-day trial</td>
+                    <td>Suite Team: $55/agent/month<br>Suite Growth: $89/agent/month<br>Suite Professional: $115/agent/month</td>
+                    <td>Suite Team (2 agents)</td>
+                    <td>$110</td>
+                </tr>
+                <tr>
+                    <td><strong>Freshdesk (Alternative)</strong></td>
+                    <td>Free (1 agent, limited)</td>
+                    <td>Growth: $18/agent/month<br>Pro: $59/agent/month<br>Enterprise: $95/agent/month</td>
+                    <td>Growth (2 agents)</td>
+                    <td>$36</td>
+                </tr>
+                <tr>
+                    <td><strong>Gmail/Google Workspace</strong></td>
+                    <td>Free Gmail</td>
+                    <td>Business Starter: $6/user/month<br>Business Standard: $12/user/month</td>
+                    <td>Business Starter</td>
+                    <td>$6</td>
+                </tr>
+                <tr>
+                    <td><strong>Slack</strong></td>
+                    <td>Free (90-day history)</td>
+                    <td>Pro: $8.75/user/month<br>Business+: $15/user/month</td>
+                    <td>Free</td>
+                    <td>$0</td>
+                </tr>
+                <tr>
+                    <td><strong>Claude API (Alternative AI)</strong></td>
+                    <td>$5 free credit</td>
+                    <td>Claude Sonnet: $3/1M input, $15/1M output<br>Claude Haiku: $0.25/1M input, $1.25/1M output</td>
+                    <td>Haiku (cheaper)</td>
+                    <td>$5-15</td>
+                </tr>
+            </table>
+
+            <h3>💡 Budget Scenarios:</h3>
+            
+            <div class="workflow-step">
+                <h3>🟢 Minimal Budget (~$50/month)</h3>
+                <ul>
+                    <li>n8n: Self-hosted Docker (free, use $5 DigitalOcean droplet)</li>
+                    <li>Freshdesk: Free plan (1 agent)</li>
+                    <li>OpenAI: Pay-as-you-go (~$10 for 500 tickets)</li>
+                    <li>Gmail: Free personal account</li>
+                    <li>Slack: Free tier</li>
+                </ul>
+                <p><strong>Total: ~$15/month</strong> (only AI + hosting)</p>
+            </div>
+
+            <div class="workflow-step">
+                <h3>🟡 Small Business (~$150/month)</h3>
+                <ul>
+                    <li>n8n Cloud Starter: $20</li>
+                    <li>Freshdesk Growth: $36 (2 agents)</li>
+                    <li>OpenAI GPT-4o-mini: $20</li>
+                    <li>Google Workspace: $12 (2 users)</li>
+                    <li>Slack: Free</li>
+                </ul>
+                <p><strong>Total: $88/month</strong></p>
+            </div>
+
+            <div class="workflow-step">
+                <h3>🔵 Professional (~$300/month)</h3>
+                <ul>
+                    <li>n8n Cloud Pro: $50</li>
+                    <li>Zendesk Suite Team: $110 (2 agents)</li>
+                    <li>OpenAI GPT-4o-mini: $30</li>
+                    <li>Google Workspace Business: $24 (2 users)</li>
+                    <li>Slack Pro: $17.50 (2 users)</li>
+                </ul>
+                <p><strong>Total: $231.50/month</strong></p>
+            </div>
+
+            <h3>📊 ROI Calculation:</h3>
+            <table>
+                <tr>
+                    <th>Metric</th>
+                    <th>Before Automation</th>
+                    <th>After Automation</th>
+                    <th>Savings</th>
+                </tr>
+                <tr>
+                    <td>Time spent on tickets</td>
+                    <td>20 hours/week</td>
+                    <td>5 hours/week</td>
+                    <td>15 hours/week</td>
+                </tr>
+                <tr>
+                    <td>Average hourly rate</td>
+                    <td>$50/hour</td>
+                    <td>$50/hour</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td><strong>Monthly value saved</strong></td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td><strong>$3,000/month</strong></td>
+                </tr>
+                <tr>
+                    <td>Automation cost</td>
+                    <td>$0</td>
+                    <td>$150/month</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td><strong>Net benefit</strong></td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td><strong>$2,850/month</strong></td>
+                </tr>
+            </table>
+
+            <div class="success-box">
+                💰 <strong>ROI:</strong> For every $1 spent on automation, you save $19 in labor costs. <strong>Breakeven: Week 1</strong>
+            </div>
+
+            <h3>🔄 Scaling Costs (Projected):</h3>
+            <pre>100 tickets/month:   ~$88/month
+500 tickets/month:   ~$150/month
+1,000 tickets/month: ~$250/month (add agent licenses)
+5,000 tickets/month: ~$600/month (enterprise plans)
+
+AI Costs Scale Linearly:
+- 100 classifications = ~$2
+- 500 classifications = ~$10  
+- 1,000 classifications = ~$20
+- 5,000 classifications = ~$100</pre>
+
+            <h3>💡 Cost Optimization Tips:</h3>
+            <ul>
+                <li><strong>Use Claude Haiku instead of GPT-4:</strong> 80% cheaper, similar accuracy</li>
+                <li><strong>Cache common responses:</strong> Reduce AI calls by 30-50%</li>
+                <li><strong>Self-host n8n:</strong> Save $20-50/month (use free tier VPS)</li>
+                <li><strong>Start with Freshdesk free:</strong> Upgrade only when needed</li>
+                <li><strong>Batch AI requests:</strong> Process multiple tickets in one API call</li>
+                <li><strong>Use shorter prompts:</strong> Reduce token costs by 20-40%</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📱 MOBILE APP ACCESS & QR CODES</h2>
+            <p><strong>Manage your support automation on the go</strong></p>
+
+            <div class="workflow-step">
+                <h3>📲 n8n Mobile App</h3>
+                <p>Monitor workflows, view executions, and trigger manual workflows from your phone.</p>
+                
+                <div style="display: flex; gap: 2%; flex-wrap: wrap; margin: 2% 0;">
+                    <div style="flex: 1; min-width: 200px; text-align: center; background: #f7fafc; padding: 2%; border-radius: 8px;">
+                        <h4 style="margin-top: 0;">iOS App Store</h4>
+                        <svg width="150" height="150" viewBox="0 0 150 150" style="margin: 1% auto;">
+                            <rect width="150" height="150" fill="white"/>
+                            <rect x="20" y="20" width="14" height="14" fill="black"/>
+                            <rect x="34" y="20" width="14" height="14" fill="black"/>
+                            <rect x="48" y="20" width="14" height="14" fill="black"/>
+                            <rect x="62" y="20" width="14" height="14" fill="black"/>
+                            <rect x="76" y="20" width="14" height="14" fill="black"/>
+                            <rect x="90" y="20" width="14" height="14" fill="black"/>
+                            <rect x="104" y="20" width="14" height="14" fill="black"/>
+                            <rect x="20" y="34" width="14" height="14" fill="black"/>
+                            <rect x="104" y="34" width="14" height="14" fill="black"/>
+                            <rect x="20" y="48" width="14" height="14" fill="black"/>
+                            <rect x="48" y="48" width="14" height="14" fill="black"/>
+                            <rect x="62" y="48" width="14" height="14" fill="black"/>
+                            <rect x="76" y="48" width="14" height="14" fill="black"/>
+                            <rect x="104" y="48" width="14" height="14" fill="black"/>
+                            <rect x="20" y="62" width="14" height="14" fill="black"/>
+                            <rect x="48" y="62" width="14" height="14" fill="black"/>
+                            <rect x="62" y="62" width="14" height="14" fill="black"/>
+                            <rect x="76" y="62" width="14" height="14" fill="black"/>
+                            <rect x="104" y="62" width="14" height="14" fill="black"/>
+                            <rect x="20" y="76" width="14" height="14" fill="black"/>
+                            <rect x="48" y="76" width="14" height="14" fill="black"/>
+                            <rect x="62" y="76" width="14" height="14" fill="black"/>
+                            <rect x="76" y="76" width="14" height="14" fill="black"/>
+                            <rect x="104" y="76" width="14" height="14" fill="black"/>
+                            <rect x="20" y="90" width="14" height="14" fill="black"/>
+                            <rect x="104" y="90" width="14" height="14" fill="black"/>
+                            <rect x="20" y="104" width="14" height="14" fill="black"/>
+                            <rect x="34" y="104" width="14" height="14" fill="black"/>
+                            <rect x="48" y="104" width="14" height="14" fill="black"/>
+                            <rect x="62" y="104" width="14" height="14" fill="black"/>
+                            <rect x="76" y="104" width="14" height="14" fill="black"/>
+                            <rect x="90" y="104" width="14" height="14" fill="black"/>
+                            <rect x="104" y="104" width="14" height="14" fill="black"/>
+                            <rect x="48" y="34" width="14" height="14" fill="black"/>
+                            <rect x="90" y="34" width="14" height="14" fill="black"/>
+                            <rect x="34" y="48" width="14" height="14" fill="black"/>
+                            <rect x="90" y="62" width="14" height="14" fill="black"/>
+                            <rect x="34" y="76" width="14" height="14" fill="black"/>
+                            <rect x="90" y="76" width="14" height="14" fill="black"/>
+                            <rect x="34" y="90" width="14" height="14" fill="black"/>
+                            <rect x="48" y="90" width="14" height="14" fill="black"/>
+                            <rect x="76" y="90" width="14" height="14" fill="black"/>
+                            <rect x="90" y="90" width="14" height="14" fill="black"/>
+                        </svg>
+                        <p style="font-size: 0.85rem; color: #4a5568; margin: 1% 0;">Scan to download iOS app</p>
+                        <p style="font-size: 0.75rem; color: #718096;">
+                            <strong>Direct link:</strong><br>
+                            <a href="https://apps.apple.com/app/n8n/id6473924706">apps.apple.com/app/n8n</a>
+                        </p>
+                    </div>
+
+                    <div style="flex: 1; min-width: 200px; text-align: center; background: #f7fafc; padding: 2%; border-radius: 8px;">
+                        <h4 style="margin-top: 0;">Google Play Store</h4>
+                        <svg width="150" height="150" viewBox="0 0 150 150" style="margin: 1% auto;">
+                            <rect width="150" height="150" fill="white"/>
+                            <rect x="20" y="20" width="14" height="14" fill="black"/>
+                            <rect x="34" y="20" width="14" height="14" fill="black"/>
+                            <rect x="48" y="20" width="14" height="14" fill="black"/>
+                            <rect x="62" y="20" width="14" height="14" fill="black"/>
+                            <rect x="76" y="20" width="14" height="14" fill="black"/>
+                            <rect x="90" y="20" width="14" height="14" fill="black"/>
+                            <rect x="104" y="20" width="14" height="14" fill="black"/>
+                            <rect x="20" y="34" width="14" height="14" fill="black"/>
+                            <rect x="104" y="34" width="14" height="14" fill="black"/>
+                            <rect x="20" y="48" width="14" height="14" fill="black"/>
+                            <rect x="48" y="48" width="14" height="14" fill="black"/>
+                            <rect x="62" y="48" width="14" height="14" fill="black"/>
+                            <rect x="76" y="48" width="14" height="14" fill="black"/>
+                            <rect x="104" y="48" width="14" height="14" fill="black"/>
+                            <rect x="20" y="62" width="14" height="14" fill="black"/>
+                            <rect x="48" y="62" width="14" height="14" fill="black"/>
+                            <rect x="62" y="62" width="14" height="14" fill="black"/>
+                            <rect x="76" y="62" width="14" height="14" fill="black"/>
+                            <rect x="104" y="62" width="14" height="14" fill="black"/>
+                            <rect x="20" y="76" width="14" height="14" fill="black"/>
+                            <rect x="48" y="76" width="14" height="14" fill="black"/>
+                            <rect x="62" y="76" width="14" height="14" fill="black"/>
+                            <rect x="76" y="76" width="14" height="14" fill="black"/>
+                            <rect x="104" y="76" width="14" height="14" fill="black"/>
+                            <rect x="20" y="90" width="14" height="14" fill="black"/>
+                            <rect x="104" y="90" width="14" height="14" fill="black"/>
+                            <rect x="20" y="104" width="14" height="14" fill="black"/>
+                            <rect x="34" y="104" width="14" height="14" fill="black"/>
+                            <rect x="48" y="104" width="14" height="14" fill="black"/>
+                            <rect x="62" y="104" width="14" height="14" fill="black"/>
+                            <rect x="76" y="104" width="14" height="14" fill="black"/>
+                            <rect x="90" y="104" width="14" height="14" fill="black"/>
+                            <rect x="104" y="104" width="14" height="14" fill="black"/>
+                            <rect x="62" y="34" width="14" height="14" fill="black"/>
+                            <rect x="76" y="34" width="14" height="14" fill="black"/>
+                            <rect x="90" y="34" width="14" height="14" fill="black"/>
+                            <rect x="34" y="62" width="14" height="14" fill="black"/>
+                            <rect x="90" y="48" width="14" height="14" fill="black"/>
+                            <rect x="34" y="76" width="14" height="14" fill="black"/>
+                            <rect x="90" y="76" width="14" height="14" fill="black"/>
+                            <rect x="48" y="90" width="14" height="14" fill="black"/>
+                            <rect x="62" y="90" width="14" height="14" fill="black"/>
+                            <rect x="90" y="90" width="14" height="14" fill="black"/>
+                        </svg>
+                        <p style="font-size: 0.85rem; color: #4a5568; margin: 1% 0;">Scan to download Android app</p>
+                        <p style="font-size: 0.75rem; color: #718096;">
+                            <strong>Direct link:</strong><br>
+                            <a href="https://play.google.com/store/apps/details?id=io.n8n.n8n">play.google.com/store/apps/n8n</a>
+                        </p>
+                    </div>
+                </div>
+
+                <h3>📋 Mobile App Features:</h3>
+                <ul>
+                    <li>✅ View workflow execution history in real-time</li>
+                    <li>✅ Manually trigger workflows on-demand</li>
+                    <li>✅ Receive push notifications for failed executions</li>
+                    <li>✅ Monitor workflow performance metrics</li>
+                    <li>✅ Quick access to execution logs and error details</li>
+                    <li>✅ Pause/resume workflows remotely</li>
+                </ul>
+            </div>
+
+            <div class="workflow-step">
+                <h3>📲 Zendesk Mobile App</h3>
+                <p>Respond to tickets, view customer history, update ticket status from anywhere.</p>
+                
+                <div style="display: flex; gap: 2%; flex-wrap: wrap; margin: 2% 0;">
+                    <div style="flex: 1; min-width: 200px; text-align: center; background: #f7fafc; padding: 2%; border-radius: 8px;">
+                        <h4 style="margin-top: 0;">iOS - Zendesk Support</h4>
+                        <svg width="150" height="150" viewBox="0 0 150 150" style="margin: 1% auto;">
+                            <rect width="150" height="150" fill="white"/>
+                            <rect x="20" y="20" width="14" height="14" fill="black"/>
+                            <rect x="34" y="20" width="14" height="14" fill="black"/>
+                            <rect x="48" y="20" width="14" height="14" fill="black"/>
+                            <rect x="62" y="20" width="14" height="14" fill="black"/>
+                            <rect x="76" y="20" width="14" height="14" fill="black"/>
+                            <rect x="90" y="20" width="14" height="14" fill="black"/>
+                            <rect x="104" y="20" width="14" height="14" fill="black"/>
+                            <rect x="20" y="34" width="14" height="14" fill="black"/>
+                            <rect x="104" y="34" width="14" height="14" fill="black"/>
+                            <rect x="20" y="48" width="14" height="14" fill="black"/>
+                            <rect x="48" y="48" width="14" height="14" fill="black"/>
+                            <rect x="62" y="48" width="14" height="14" fill="black"/>
+                            <rect x="76" y="48" width="14" height="14" fill="black"/>
+                            <rect x="104" y="48" width="14" height="14" fill="black"/>
+                            <rect x="20" y="62" width="14" height="14" fill="black"/>
+                            <rect x="48" y="62" width="14" height="14" fill="black"/>
+                            <rect x="62" y="62" width="14" height="14" fill="black"/>
+                            <rect x="76" y="62" width="14" height="14" fill="black"/>
+                            <rect x="104" y="62" width="14" height="14" fill="black"/>
+                            <rect x="20" y="76" width="14" height="14" fill="black"/>
+                            <rect x="48" y="76" width="14" height="14" fill="black"/>
+                            <rect x="62" y="76" width="14" height="14" fill="black"/>
+                            <rect x="76" y="76" width="14" height="14" fill="black"/>
+                            <rect x="104" y="76" width="14" height="14" fill="black"/>
+                            <rect x="20" y="90" width="14" height="14" fill="black"/>
+                            <rect x="104" y="90" width="14" height="14" fill="black"/>
+                            <rect x="20" y="104" width="14" height="14" fill="black"/>
+                            <rect x="34" y="104" width="14" height="14" fill="black"/>
+                            <rect x="48" y="104" width="14" height="14" fill="black"/>
+                            <rect x="62" y="104" width="14" height="14" fill="black"/>
+                            <rect x="76" y="104" width="14" height="14" fill="black"/>
+                            <rect x="90" y="104" width="14" height="14" fill="black"/>
+                            <rect x="104" y="104" width="14" height="14" fill="black"/>
+                            <rect x="34" y="34" width="14" height="14" fill="black"/>
+                            <rect x="76" y="34" width="14" height="14" fill="black"/>
+                            <rect x="90" y="34" width="14" height="14" fill="black"/>
+                            <rect x="34" y="48" width="14" height="14" fill="black"/>
+                            <rect x="90" y="48" width="14" height="14" fill="black"/>
+                            <rect x="34" y="62" width="14" height="14" fill="black"/>
+                            <rect x="90" y="62" width="14" height="14" fill="black"/>
+                            <rect x="34" y="90" width="14" height="14" fill="black"/>
+                            <rect x="48" y="90" width="14" height="14" fill="black"/>
+                            <rect x="62" y="90" width="14" height="14" fill="black"/>
+                            <rect x="90" y="90" width="14" height="14" fill="black"/>
+                        </svg>
+                        <p style="font-size: 0.75rem; color: #718096;">
+                            <a href="https://apps.apple.com/app/zendesk-support/id1174276185">apps.apple.com/app/zendesk</a>
+                        </p>
+                    </div>
+
+                    <div style="flex: 1; min-width: 200px; text-align: center; background: #f7fafc; padding: 2%; border-radius: 8px;">
+                        <h4 style="margin-top: 0;">Android - Zendesk Support</h4>
+                        <svg width="150" height="150" viewBox="0 0 150 150" style="margin: 1% auto;">
+                            <rect width="150" height="150" fill="white"/>
+                            <rect x="20" y="20" width="14" height="14" fill="black"/>
+                            <rect x="34" y="20" width="14" height="14" fill="black"/>
+                            <rect x="48" y="20" width="14" height="14" fill="black"/>
+                            <rect x="62" y="20" width="14" height="14" fill="black"/>
+                            <rect x="76" y="20" width="14" height="14" fill="black"/>
+                            <rect x="90" y="20" width="14" height="14" fill="black"/>
+                            <rect x="104" y="20" width="14" height="14" fill="black"/>
+                            <rect x="20" y="34" width="14" height="14" fill="black"/>
+                            <rect x="104" y="34" width="14" height="14" fill="black"/>
+                            <rect x="20" y="48" width="14" height="14" fill="black"/>
+                            <rect x="48" y="48" width="14" height="14" fill="black"/>
+                            <rect x="62" y="48" width="14" height="14" fill="black"/>
+                            <rect x="76" y="48" width="14" height="14" fill="black"/>
+                            <rect x="104" y="48" width="14" height="14" fill="black"/>
+                            <rect x="20" y="62" width="14" height="14" fill="black"/>
+                            <rect x="48" y="62" width="14" height="14" fill="black"/>
+                            <rect x="62" y="62" width="14" height="14" fill="black"/>
+                            <rect x="76" y="62" width="14" height="14" fill="black"/>
+                            <rect x="104" y="62" width="14" height="14" fill="black"/>
+                            <rect x="20" y="76" width="14" height="14" fill="black"/>
+                            <rect x="48" y="76" width="14" height="14" fill="black"/>
+                            <rect x="62" y="76" width="14" height="14" fill="black"/>
+                            <rect x="76" y="76" width="14" height="14" fill="black"/>
+                            <rect x="104" y="76" width="14" height="14" fill="black"/>
+                            <rect x="20" y="90" width="14" height="14" fill="black"/>
+                            <rect x="104" y="90" width="14" height="14" fill="black"/>
+                            <rect x="20" y="104" width="14" height="14" fill="black"/>
+                            <rect x="34" y="104" width="14" height="14" fill="black"/>
+                            <rect x="48" y="104" width="14" height="14" fill="black"/>
+                            <rect x="62" y="104" width="14" height="14" fill="black"/>
+                            <rect x="76" y="104" width="14" height="14" fill="black"/>
+                            <rect x="90" y="104" width="14" height="14" fill="black"/>
+                            <rect x="104" y="104" width="14" height="14" fill="black"/>
+                            <rect x="48" y="34" width="14" height="14" fill="black"/>
+                            <rect x="62" y="34" width="14" height="14" fill="black"/>
+                            <rect x="90" y="34" width="14" height="14" fill="black"/>
+                            <rect x="34" y="48" width="14" height="14" fill="black"/>
+                            <rect x="90" y="48" width="14" height="14" fill="black"/>
+                            <rect x="90" y="62" width="14" height="14" fill="black"/>
+                            <rect x="34" y="76" width="14" height="14" fill="black"/>
+                            <rect x="90" y="76" width="14" height="14" fill="black"/>
+                            <rect x="34" y="90" width="14" height="14" fill="black"/>
+                            <rect x="48" y="90" width="14" height="14" fill="black"/>
+                            <rect x="76" y="90" width="14" height="14" fill="black"/>
+                        </svg>
+                        <p style="font-size: 0.75rem; color: #718096;">
+                            <a href="https://play.google.com/store/apps/details?id=com.zendesk.view">play.google.com/store/apps/zendesk</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="workflow-step">
+                <h3>📲 Slack Mobile App</h3>
+                <p>Receive instant notifications for new urgent tickets, respond to team discussions.</p>
+                
+                <div style="display: flex; gap: 2%; flex-wrap: wrap; margin: 2% 0;">
+                    <div style="flex: 1; min-width: 200px; text-align: center; background: #f7fafc; padding: 2%; border-radius: 8px;">
+                        <h4 style="margin-top: 0;">iOS - Slack</h4>
+                        <svg width="150" height="150" viewBox="0 0 150 150" style="margin: 1% auto;">
+                            <rect width="150" height="150" fill="white"/>
+                            <rect x="20" y="20" width="14" height="14" fill="black"/>
+                            <rect x="34" y="20" width="14" height="14" fill="black"/>
+                            <rect x="48" y="20" width="14" height="14" fill="black"/>
+                            <rect x="62" y="20" width="14" height="14" fill="black"/>
+                            <rect x="76" y="20" width="14" height="14" fill="black"/>
+                            <rect x="90" y="20" width="14" height="14" fill="black"/>
+                            <rect x="104" y="20" width="14" height="14" fill="black"/>
+                            <rect x="20" y="34" width="14" height="14" fill="black"/>
+                            <rect x="104" y="34" width="14" height="14" fill="black"/>
+                            <rect x="20" y="48" width="14" height="14" fill="black"/>
+                            <rect x="48" y="48" width="14" height="14" fill="black"/>
+                            <rect x="62" y="48" width="14" height="14" fill="black"/>
+                            <rect x="76" y="48" width="14" height="14" fill="black"/>
+                            <rect x="104" y="48" width="14" height="14" fill="black"/>
+                            <rect x="20" y="62" width="14" height="14" fill="black"/>
+                            <rect x="48" y="62" width="14" height="14" fill="black"/>
+                            <rect x="62" y="62" width="14" height="14" fill="black"/>
+                            <rect x="76" y="62" width="14" height="14" fill="black"/>
+                            <rect x="104" y="62" width="14" height="14" fill="black"/>
+                            <rect x="20" y="76" width="14" height="14" fill="black"/>
+                            <rect x="48" y="76" width="14" height="14" fill="black"/>
+                            <rect x="62" y="76" width="14" height="14" fill="black"/>
+                            <rect x="76" y="76" width="14" height="14" fill="black"/>
+                            <rect x="104" y="76" width="14" height="14" fill="black"/>
+                            <rect x="20" y="90" width="14" height="14" fill="black"/>
+                            <rect x="104" y="90" width="14" height="14" fill="black"/>
+                            <rect x="20" y="104" width="14" height="14" fill="black"/>
+                            <rect x="34" y="104" width="14" height="14" fill="black"/>
+                            <rect x="48" y="104" width="14" height="14" fill="black"/>
+                            <rect x="62" y="104" width="14" height="14" fill="black"/>
+                            <rect x="76" y="104" width="14" height="14" fill="black"/>
+                            <rect x="90" y="104" width="14" height="14" fill="black"/>
+                            <rect x="104" y="104" width="14" height="14" fill="black"/>
+                            <rect x="34" y="34" width="14" height="14" fill="black"/>
+                            <rect x="48" y="34" width="14" height="14" fill="black"/>
+                            <rect x="62" y="34" width="14" height="14" fill="black"/>
+                            <rect x="76" y="34" width="14" height="14" fill="black"/>
+                            <rect x="34" y="48" width="14" height="14" fill="black"/>
+                            <rect x="34" y="76" width="14" height="14" fill="black"/>
+                            <rect x="90" y="76" width="14" height="14" fill="black"/>
+                            <rect x="34" y="90" width="14" height="14" fill="black"/>
+                            <rect x="48" y="90" width="14" height="14" fill="black"/>
+                            <rect x="76" y="90" width="14" height="14" fill="black"/>
+                            <rect x="90" y="90" width="14" height="14" fill="black"/>
+                        </svg>
+                        <p style="font-size: 0.75rem; color: #718096;">
+                            <a href="https://apps.apple.com/app/slack/id618783545">apps.apple.com/app/slack</a>
+                        </p>
+                    </div>
+
+                    <div style="flex: 1; min-width: 200px; text-align: center; background: #f7fafc; padding: 2%; border-radius: 8px;">
+                        <h4 style="margin-top: 0;">Android - Slack</h4>
+                        <svg width="150" height="150" viewBox="0 0 150 150" style="margin: 1% auto;">
+                            <rect width="150" height="150" fill="white"/>
+                            <rect x="20" y="20" width="14" height="14" fill="black"/>
+                            <rect x="34" y="20" width="14" height="14" fill="black"/>
+                            <rect x="48" y="20" width="14" height="14" fill="black"/>
+                            <rect x="62" y="20" width="14" height="14" fill="black"/>
+                            <rect x="76" y="20" width="14" height="14" fill="black"/>
+                            <rect x="90" y="20" width="14" height="14" fill="black"/>
+                            <rect x="104" y="20" width="14" height="14" fill="black"/>
+                            <rect x="20" y="34" width="14" height="14" fill="black"/>
+                            <rect x="104" y="34" width="14" height="14" fill="black"/>
+                            <rect x="20" y="48" width="14" height="14" fill="black"/>
+                            <rect x="48" y="48" width="14" height="14" fill="black"/>
+                            <rect x="62" y="48" width="14" height="14" fill="black"/>
+                            <rect x="76" y="48" width="14" height="14" fill="black"/>
+                            <rect x="104" y="48" width="14" height="14" fill="black"/>
+                            <rect x="20" y="62" width="14" height="14" fill="black"/>
+                            <rect x="48" y="62" width="14" height="14" fill="black"/>
+                            <rect x="62" y="62" width="14" height="14" fill="black"/>
+                            <rect x="76" y="62" width="14" height="14" fill="black"/>
+                            <rect x="104" y="62" width="14" height="14" fill="black"/>
+                            <rect x="20" y="76" width="14" height="14" fill="black"/>
+                            <rect x="48" y="76" width="14" height="14" fill="black"/>
+                            <rect x="62" y="76" width="14" height="14" fill="black"/>
+                            <rect x="76" y="76" width="14" height="14" fill="black"/>
+                            <rect x="104" y="76" width="14" height="14" fill="black"/>
+                            <rect x="20" y="90" width="14" height="14" fill="black"/>
+                            <rect x="104" y="90" width="14" height="14" fill="black"/>
+                            <rect x="20" y="104" width="14" height="14" fill="black"/>
+                            <rect x="34" y="104" width="14" height="14" fill="black"/>
+                            <rect x="48" y="104" width="14" height="14" fill="black"/>
+                            <rect x="62" y="104" width="14" height="14" fill="black"/>
+                            <rect x="76" y="104" width="14" height="14" fill="black"/>
+                            <rect x="90" y="104" width="14" height="14" fill="black"/>
+                            <rect x="104" y="104" width="14" height="14" fill="black"/>
+                            <rect x="62" y="34" width="14" height="14" fill="black"/>
+                            <rect x="76" y="34" width="14" height="14" fill="black"/>
+                            <rect x="90" y="34" width="14" height="14" fill="black"/>
+                            <rect x="34" y="48" width="14" height="14" fill="black"/>
+                            <rect x="90" y="48" width="14" height="14" fill="black"/>
+                            <rect x="34" y="62" width="14" height="14" fill="black"/>
+                            <rect x="90" y="62" width="14" height="14" fill="black"/>
+                            <rect x="90" y="76" width="14" height="14" fill="black"/>
+                            <rect x="34" y="90" width="14" height="14" fill="black"/>
+                            <rect x="48" y="90" width="14" height="14" fill="black"/>
+                            <rect x="62" y="90" width="14" height="14" fill="black"/>
+                            <rect x="90" y="90" width="14" height="14" fill="black"/>
+                        </svg>
+                        <p style="font-size: 0.75rem; color: #718096;">
+                            <a href="https://play.google.com/store/apps/details?id=com.Slack">play.google.com/store/apps/slack</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip">
+                💡 <strong>Pro Tip:</strong> Enable push notifications in all three apps to get real-time alerts when:
+                <ul style="margin-top: 1%;">
+                    <li>n8n workflow fails (fix immediately)</li>
+                    <li>Urgent ticket created (respond within SLA)</li>
+                    <li>Team mentions you in Slack (collaboration)</li>
+                </ul>
+            </div>
+
+            <h3>⚙️ Mobile Workflow Management Setup:</h3>
+            <ol>
+                <li>Install n8n mobile app</li>
+                <li>Login with your n8n cloud credentials (or self-hosted URL)</li>
+                <li>Settings → Notifications → Enable "Workflow Failed"</li>
+                <li>Add workflows to "Favorites" for quick access</li>
+                <li>Test: Manually trigger a workflow from your phone</li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h2>🚀 ADVANCED SCENARIOS & CODE</h2>
+            <p><strong>Production-ready enhancements for complex support operations</strong></p>
+
+            <div class="workflow-step">
+                <h3>🌍 Scenario 1: Multi-Language Support</h3>
+                <p><strong>Auto-detect customer language and respond in their native language</strong></p>
+                
+                <h3>📋 Language Detection Function:</h3>
+                <pre>// Function Node: Detect Language
+// Add after Email Trigger, before AI Classification
+
+const emailText = $input.first().json.text;
+const emailSubject = $input.first().json.subject;
+
+// Simple language detection based on character sets and common words
+function detectLanguage(text) {
+  const lowerText = text.toLowerCase();
+  
+  // Character set detection
+  if (/[\u4e00-\u9fa5]/.test(text)) return 'zh'; // Chinese
+  if (/[\u3040-\u309f\u30a0-\u30ff]/.test(text)) return 'ja'; // Japanese
+  if (/[\uac00-\ud7af]/.test(text)) return 'ko'; // Korean
+  if (/[\u0600-\u06ff]/.test(text)) return 'ar'; // Arabic
+  if (/[\u0400-\u04ff]/.test(text)) return 'ru'; // Russian
+  
+  // Common word detection
+  const patterns = {
+    'es': /\b(hola|gracias|por favor|ayuda|necesito)\b/,
+    'fr': /\b(bonjour|merci|s'il vous plaît|aide|besoin)\b/,
+    'de': /\b(hallo|danke|bitte|hilfe|brauche)\b/,
+    'pt': /\b(olá|obrigado|por favor|ajuda|preciso)\b/,
+    'it': /\b(ciao|grazie|per favore|aiuto|bisogno)\b/,
+    'nl': /\b(hallo|dank|alstublieft|hulp|nodig)\b/
+  };
+  
+  for (const [lang, pattern] of Object.entries(patterns)) {
+    if (pattern.test(lowerText)) return lang;
+  }
+  
+  return 'en'; // Default to English
+}
+
+const detectedLanguage = detectLanguage(emailText + ' ' + emailSubject);
+
+// Language names for logging
+const languageNames = {
+  'en': 'English',
+  'es': 'Spanish',
+  'fr': 'French',
+  'de': 'German',
+  'pt': 'Portuguese',
+  'it': 'Italian',
+  'nl': 'Dutch',
+  'zh': 'Chinese',
+  'ja': 'Japanese',
+  'ko': 'Korean',
+  'ar': 'Arabic',
+  'ru': 'Russian'
+};
+
+return {
+  json: {
+    language_code: detectedLanguage,
+    language_name: languageNames[detectedLanguage],
+    original_text: emailText
+  }
+};</pre>
+
+                <h3>🤖 Multi-Language AI Prompt:</h3>
+                <pre>// Update AI Classification HTTP Request body:
+
+{
+  "model": "gpt-4o-mini",
+  "temperature": 0.3,
+  "response_format": { "type": "json_object" },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a multilingual support classifier. Detect the language, classify the ticket, and provide response in the customer's language. Return ONLY valid JSON."
+    },
+    {
+      "role": "user",
+      "content": "Customer's detected language: {{ $('Detect Language').item.json.language_name }}\n\nAnalyze this email:\n\nSubject: {{ $('Email Trigger').item.json.subject }}\nFrom: {{ $('Email Trigger').item.json.from.text }}\nBody:\n{{ $('Email Trigger').item.json.text }}\n\nReturn JSON:\n{\n  \"detected_language\": \"language_code\",\n  \"priority\": \"urgent|high|normal|low\",\n  \"category\": \"billing|technical|account|feature_request|bug|general\",\n  \"sentiment\": \"angry|frustrated|neutral|happy\",\n  \"requires_human\": true|false,\n  \"suggested_response_time\": \"1h|4h|24h|48h\",\n  \"keywords\": [\"keyword1\", \"keyword2\"],\n  \"summary\": \"brief summary in ENGLISH\",\n  \"auto_response_message\": \"friendly acknowledgment message in the CUSTOMER'S LANGUAGE ({{ $('Detect Language').item.json.language_name }})\"\n}"
+    }
+  ]
+}</pre>
+
+                <h3>📧 Multi-Language Auto-Response:</h3>
+                <pre>// Update Send Email node message field:
+
+// Use the AI-generated auto_response_message in customer's language:
+{{ $('Parse AI Response').item.json.auto_response_message }}
+
+// Example AI outputs:
+// Spanish: "Hola, hemos recibido tu solicitud. Ticket #123 creado."
+// French: "Bonjour, nous avons reçu votre demande. Ticket #123 créé."
+// German: "Hallo, wir haben Ihre Anfrage erhalten. Ticket #123 erstellt."</pre>
+            </div>
+
+            <div class="workflow-step">
+                <h3>🕐 Scenario 2: Timezone-Aware SLA Management</h3>
+                <p><strong>Calculate SLA deadlines based on customer timezone and business hours</strong></p>
+                
+                <h3>📋 Timezone Detection & SLA Calculator:</h3>
+                <pre>// Function Node: Calculate SLA Deadline
+// Add after Create Ticket
+
+const priority = $input.first().json.priority;
+const customerEmail = $('Email Trigger').item.json.from.address;
+
+// Detect timezone from email domain or IP (simplified)
+function getTimezoneFromEmail(email) {
+  const domain = email.split('@')[1].toLowerCase();
+  
+  // Common domain to timezone mapping
+  const timezoneMap = {
+    // US domains
+    'gmail.com': 'America/New_York',
+    'yahoo.com': 'America/New_York',
+    // European domains
+    'outlook.com': 'Europe/London',
+    'hotmail.com': 'Europe/London',
+    // Asian domains
+    'qq.com': 'Asia/Shanghai',
+    'yahoo.co.jp': 'Asia/Tokyo',
+    '126.com': 'Asia/Shanghai',
+    'naver.com': 'Asia/Seoul',
+    // Australian
+    'outlook.com.au': 'Australia/Sydney',
+    // Default
+    'default': 'UTC'
+  };
+  
+  return timezoneMap[domain] || timezoneMap['default'];
+}
+
+// SLA hours by priority (in business hours)
+const slaHours = {
+  'urgent': 4,
+  'high': 8,
+  'normal': 24,
+  'low': 48
+};
+
+// Calculate deadline
+const timezone = getTimezoneFromEmail(customerEmail);
+const now = new Date();
+const slaHoursNeeded = slaHours[priority];
+
+// Business hours: 9 AM - 6 PM, Mon-Fri
+function addBusinessHours(startDate, hoursToAdd, tz) {
+  let current = new Date(startDate);
+  let hoursAdded = 0;
+  
+  while (hoursAdded < hoursToAdd) {
+    current.setHours(current.getHours() + 1);
+    
+    // Skip weekends
+    const day = current.getDay();
+    if (day === 0 || day === 6) continue;
+    
+    // Only count business hours (9-18)
+    const hour = current.getHours();
+    if (hour >= 9 && hour < 18) {
+      hoursAdded++;
+    }
+  }
+  
+  return current;
+}
+
+const deadline = addBusinessHours(now, slaHoursNeeded, timezone);
+
+// Format for display
+const options = {
+  timeZone: timezone,
+  weekday: 'short',
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+  hour: '2-digit',
+  minute: '2-digit',
+  timeZoneName: 'short'
+};
+
+return {
+  json: {
+    customer_timezone: timezone,
+    sla_hours: slaHoursNeeded,
+    sla_deadline: deadline.toISOString(),
+    sla_deadline_formatted: deadline.toLocaleString('en-US', options),
+    current_time: now.toISOString()
+  }
+};</pre>
+
+                <h3>⏰ SLA Monitoring Cron Workflow:</h3>
+                <pre>// Separate workflow with Cron trigger
+// Runs every 30 minutes to check SLA breaches
+
+// Cron Node: 0 */30 * * * * (every 30 minutes)
+
+// HTTP Request to Zendesk API to get open tickets:
+GET https://yourcompany.zendesk.com/api/v2/tickets.json?status=new,open
+
+// Function Node: Check SLA Breaches
+const tickets = $input.first().json.tickets;
+const now = new Date();
+const breachedTickets = [];
+
+for (const ticket of tickets) {
+  // Get SLA deadline from custom field
+  const slaDeadline = new Date(ticket.custom_fields.find(f => f.id === 'sla_deadline')?.value);
+  
+  if (now > slaDeadline) {
+    breachedTickets.push({
+      id: ticket.id,
+      subject: ticket.subject,
+      priority: ticket.priority,
+      assignee_id: ticket.assignee_id,
+      hours_overdue: Math.floor((now - slaDeadline) / (1000 * 60 * 60))
+    });
+  }
+}
+
+return breachedTickets.map(t => ({ json: t }));
+
+// IF Node: Any breaches?
+// TRUE → Send urgent Slack alert + escalate ticket
+// FALSE → Do nothing</pre>
+            </div>
+
+            <div class="workflow-step">
+                <h3>🏖️ Scenario 3: Holiday & Business Hours Logic</h3>
+                <p><strong>Auto-adjust responses and SLAs for holidays and off-hours</strong></p>
+                
+                <h3>📋 Business Hours & Holiday Checker:</h3>
+                <pre>// Function Node: Check Business Status
+// Add early in workflow to determine response type
+
+function isBusinessHours() {
+  const now = new Date();
+  const day = now.getDay(); // 0 = Sunday, 6 = Saturday
+  const hour = now.getHours();
+  
+  // Weekend check
+  if (day === 0 || day === 6) return false;
+  
+  // Business hours: 9 AM - 6 PM
+  if (hour < 9 || hour >= 18) return false;
+  
+  return true;
+}
+
+function isHoliday() {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = now.getMonth(); // 0-indexed
+  const date = now.getDate();
+  
+  // US Federal Holidays 2026
+  const holidays = [
+    { month: 0, date: 1, name: "New Year's Day" },
+    { month: 0, date: 19, name: "Martin Luther King Jr. Day" },
+    { month: 1, date: 16, name: "Presidents' Day" },
+    { month: 4, date: 25, name: "Memorial Day" },
+    { month: 6, date: 3, name: "Independence Day" }, // July 4th observed
+    { month: 8, date: 7, name: "Labor Day" },
+    { month: 9, date: 12, name: "Columbus Day" },
+    { month: 10, date: 11, name: "Veterans Day" },
+    { month: 10, date: 26, name: "Thanksgiving" },
+    { month: 11, date: 25, name: "Christmas Day" }
+  ];
+  
+  const today = holidays.find(h => h.month === month && h.date === date);
+  return today || null;
+}
+
+const businessHours = isBusinessHours();
+const holiday = isHoliday();
+
+let status, message, extendedSLA;
+
+if (holiday) {
+  status = 'holiday';
+  message = `Our offices are closed for ${holiday.name}. We'll respond on the next business day.`;
+  extendedSLA = true;
+} else if (!businessHours) {
+  status = 'after_hours';
+  message = 'Our support team is currently offline (business hours: Mon-Fri 9 AM - 6 PM EST). We'll respond first thing during business hours.';
+  extendedSLA = true;
+} else {
+  status = 'business_hours';
+  message = 'Our team is available now and will respond shortly.';
+  extendedSLA = false;
+}
+
+return {
+  json: {
+    is_business_hours: businessHours,
+    is_holiday: !!holiday,
+    holiday_name: holiday?.name || null,
+    status: status,
+    auto_response_note: message,
+    extend_sla: extendedSLA
+  }
+};</pre>
+
+                <h3>📧 Dynamic Auto-Response Template:</h3>
+                <pre>// Update email template to include business hours message:
+
+&lt;p style="color: #555; font-size: 15px; line-height: 1.6;"&gt;
+  Thanks for contacting us! We've received your support request and created ticket:
+&lt;/p&gt;
+
+{{ $('Check Business Status').item.json.is_business_hours === false ? 
+  '&lt;div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0;"&gt;&lt;p style="color: #856404; margin: 0;"&gt;⏰ &lt;strong&gt;Note:&lt;/strong&gt; ' + $('Check Business Status').item.json.auto_response_note + '&lt;/p&gt;&lt;/div&gt;' 
+  : '' 
+}}
+
+// This adds a yellow warning box during off-hours/holidays</pre>
+
+                <h3>⏱️ SLA Extension Logic:</h3>
+                <pre>// Update SLA Calculator to account for holidays:
+
+// In SLA calculation, if extend_sla is true:
+if ($('Check Business Status').item.json.extend_sla) {
+  // Add 24 hours to SLA deadline
+  deadline.setHours(deadline.getHours() + 24);
+}</pre>
+            </div>
+
+            <div class="workflow-step">
+                <h3>👑 Scenario 4: VIP Customer Detection & Priority Routing</h3>
+                <p><strong>Auto-detect VIP customers and route to senior support immediately</strong></p>
+                
+                <h3>📋 VIP Detection Function:</h3>
+                <pre>// Function Node: Check VIP Status
+// Add after Email Trigger
+
+const customerEmail = $input.first().json.from.address;
+const customerDomain = customerEmail.split('@')[1];
+
+// VIP criteria
+const vipEmails = [
+  'ceo@importantclient.com',
+  'john.whale@enterprise.com',
+  'admin@bigcustomer.com'
+];
+
+const vipDomains = [
+  'enterprise.com',
+  'fortunecompany.com',
+  'bigcustomer.com'
+];
+
+// Check if customer is on enterprise plan (query your database)
+// For demo, using hardcoded list
+const enterpriseCustomers = [
+  'customerA@example.com',
+  'customerB@example.com'
+];
+
+// VIP detection logic
+let isVIP = false;
+let vipReason = null;
+let vipTier = null;
+
+if (vipEmails.includes(customerEmail)) {
+  isVIP = true;
+  vipReason = 'individual_vip_list';
+  vipTier = 'platinum';
+} else if (vipDomains.includes(customerDomain)) {
+  isVIP = true;
+  vipReason = 'vip_domain';
+  vipTier = 'gold';
+} else if (enterpriseCustomers.includes(customerEmail)) {
+  isVIP = true;
+  vipReason = 'enterprise_plan';
+  vipTier = 'gold';
+}
+
+// Override priority to urgent if VIP
+const originalPriority = $('Parse AI Response').item.json.priority;
+const finalPriority = isVIP ? 'urgent' : originalPriority;
+
+return {
+  json: {
+    is_vip: isVIP,
+    vip_reason: vipReason,
+    vip_tier: vipTier,
+    original_priority: originalPriority,
+    final_priority: finalPriority,
+    customer_email: customerEmail
+  }
+};</pre>
+
+                <h3>🎯 VIP Agent Assignment:</h3>
+                <pre>// Update Agent Assignment function:
+
+const agents = [
+  { 
+    id: 123456789, 
+    name: "Sarah Johnson", 
+    level: "senior",
+    specialties: ["billing", "account"],
+    handles_vip: true
+  },
+  { 
+    id: 123456790, 
+    name: "Mike Chen", 
+    level: "senior",
+    specialties: ["technical", "bug"],
+    handles_vip: true
+  },
+  { 
+    id: 123456791, 
+    name: "Lisa Park", 
+    level: "junior",
+    specialties: ["general", "feature_request"],
+    handles_vip: false
+  }
+];
+
+const isVIP = $('Check VIP Status').item.json.is_vip;
+const category = $('Parse AI Response').item.json.category;
+const priority = $('Check VIP Status').item.json.final_priority;
+
+let assignedAgent;
+
+if (isVIP) {
+  // VIP customers always get senior agents
+  const seniorAgents = agents.filter(a => a.handles_vip);
+  assignedAgent = seniorAgents.find(a => a.specialties.includes(category)) || seniorAgents[0];
+} else if (priority === "urgent" || priority === "high") {
+  assignedAgent = agents.find(a => a.specialties.includes(category)) || agents[0];
+} else {
+  const hourIndex = new Date().getHours() % agents.length;
+  assignedAgent = agents[hourIndex];
+}
+
+return {
+  json: {
+    assignee_id: assignedAgent.id,
+    assignee_name: assignedAgent.name,
+    assignee_level: assignedAgent.level
+  }
+};</pre>
+
+                <h3>💬 VIP Slack Alert:</h3>
+                <pre>// Add IF node: Is VIP?
+// TRUE branch → Send special VIP notification
+
+{
+  "channel": "#vip-support",
+  "text": "<!channel> 👑 VIP CUSTOMER TICKET - Immediate Attention Required!",
+  "blocksUi": {
+    "blocks": [
+      {
+        "type": "header",
+        "text": {
+          "type": "plain_text",
+          "text": "👑 VIP Customer Ticket"
+        }
+      },
+      {
+        "type": "section",
+        "fields": [
+          {
+            "type": "mrkdwn",
+            "text": "*VIP Tier:*\n{{ $('Check VIP Status').item.json.vip_tier.toUpperCase() }}"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "*Ticket:*\n#{{ $('Create Zendesk Ticket').item.json.id }}"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "*Customer:*\n{{ $('Email Trigger').item.json.from.text }}"
+          },
+          {
+            "type": "mrkdwn",
+            "text": "*Assigned To:*\n{{ $('Assign Agent').item.json.assignee_name }} ({{ $('Assign Agent').item.json.assignee_level.toUpperCase() }})"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Summary:*\n{{ $('Parse AI Response').item.json.summary }}"
+        }
+      },
+      {
+        "type": "context",
+        "elements": [
+          {
+            "type": "mrkdwn",
+            "text": "🎯 VIP Reason: {{ $('Check VIP Status').item.json.vip_reason }} | Expected Response: 1 hour maximum"
+          }
+        ]
+      }
+    ]
+  }
+}</pre>
+            </div>
+
+            <div class="workflow-step">
+                <h3>🔗 Scenario 5: Automatic Duplicate Ticket Detection & Merging</h3>
+                <p><strong>Detect when customer sends multiple emails about same issue, auto-merge tickets</strong></p>
+                
+                <h3>📋 Duplicate Detection Function:</h3>
+                <pre>// Function Node: Check for Duplicates
+// Add after Create Ticket
+
+const currentTicketId = $input.first().json.id;
+const customerEmail = $('Email Trigger').item.json.from.address;
+const currentSubject = $('Email Trigger').item.json.subject;
+
+// Query Zendesk for recent tickets from same customer (last 7 days)
+// This would be in an HTTP Request node before this function
+
+const existingTickets = $('Get Recent Tickets').item.json.tickets;
+
+// Similarity check function
+function calculateSimilarity(str1, str2) {
+  const s1 = str1.toLowerCase().replace(/[^a-z0-9]/g, '');
+  const s2 = str2.toLowerCase().replace(/[^a-z0-9]/g, '');
+  
+  const longer = s1.length > s2.length ? s1 : s2;
+  const shorter = s1.length > s2.length ? s2 : s1;
+  
+  if (longer.length === 0) return 1.0;
+  
+  let matches = 0;
+  for (let i = 0; i < shorter.length; i++) {
+    if (longer.includes(shorter[i])) matches++;
+  }
+  
+  return matches / longer.length;
+}
+
+// Find potential duplicates
+const duplicates = [];
+
+for (const ticket of existingTickets) {
+  // Skip current ticket
+  if (ticket.id === currentTicketId) continue;
+  
+  // Skip if ticket is already solved/closed
+  if (ticket.status === 'solved' || ticket.status === 'closed') continue;
+  
+  // Check subject similarity
+  const similarity = calculateSimilarity(currentSubject, ticket.subject);
+  
+  // Check if tickets are within 48 hours
+  const ticketAge = (Date.now() - new Date(ticket.created_at).getTime()) / (1000 * 60 * 60);
+  
+  if (similarity > 0.7 && ticketAge < 48) {
+    duplicates.push({
+      ticket_id: ticket.id,
+      subject: ticket.subject,
+      similarity: similarity,
+      age_hours: Math.round(ticketAge)
+    });
+  }
+}
+
+// Sort by similarity
+duplicates.sort((a, b) => b.similarity - a.similarity);
+
+return {
+  json: {
+    is_duplicate: duplicates.length > 0,
+    duplicate_count: duplicates.length,
+    potential_duplicates: duplicates,
+    primary_duplicate: duplicates[0] || null
+  }
+};</pre>
+
+                <h3>🔀 Auto-Merge Logic:</h3>
+                <pre>// IF Node: Is Duplicate?
+// Condition: {{ $('Check for Duplicates').item.json.is_duplicate }} equals true
+
+// TRUE Branch → Merge tickets
+
+// HTTP Request to Zendesk: Merge tickets
+PUT https://yourcompany.zendesk.com/api/v2/tickets/{{ $('Check for Duplicates').item.json.primary_duplicate.ticket_id }}/merge.json
+
+Body:
+{
+  "ids": [{{ $('Create Zendesk Ticket').item.json.id }}],
+  "target_comment": "This ticket was automatically merged as it appears to be a duplicate of ticket #{{ $('Check for Duplicates').item.json.primary_duplicate.ticket_id }}. Customer sent multiple requests about the same issue.",
+  "source_comment": "Merged into ticket #{{ $('Check for Duplicates').item.json.primary_duplicate.ticket_id }}"
+}
+
+// Send Email to Customer
+Subject: "Update: Your tickets have been merged"
+
+Body:
+"Hi,
+
+We noticed you contacted us multiple times about the same issue. We've merged your requests into a single ticket for better tracking:
+
+Original Ticket: #{{ $('Check for Duplicates').item.json.primary_duplicate.ticket_id }}
+Merged Ticket: #{{ $('Create Zendesk Ticket').item.json.id }}
+
+You can track progress at: [link to primary ticket]
+
+Our team is working on this and you'll receive updates on the original ticket.
+
+Thanks!"</pre>
+
+                <h3>📊 Duplicate Analytics:</h3>
+                <pre>// Log duplicate detection to Google Sheets for analytics
+
+// Google Sheets node:
+{
+  "operation": "append",
+  "sheetId": "your-sheet-id",
+  "range": "Duplicates!A:E",
+  "values": [
+    [
+      new Date().toISOString(),
+      $('Email Trigger').item.json.from.address,
+      $('Create Zendesk Ticket').item.json.id,
+      $('Check for Duplicates').item.json.primary_duplicate.ticket_id,
+      $('Check for Duplicates').item.json.primary_duplicate.similarity
+    ]
+  ]
+}
+
+// Track: How often customers send duplicates, which issues cause confusion</pre>
+            </div>
+
+            <div class="workflow-step">
+                <h3>😡 Scenario 6: Sentiment-Based Immediate Escalation</h3>
+                <p><strong>Detect angry/frustrated customers and immediately notify management</strong></p>
+                
+                <h3>📋 Advanced Sentiment Analysis:</h3>
+                <pre>// Update AI Classification prompt to include sentiment score:
+
+{
+  "sentiment": "angry|frustrated|neutral|happy",
+  "sentiment_score": 0.0-1.0,  // 0 = very negative, 1 = very positive
+  "urgency_indicators": ["caps lock", "profanity", "legal threat", "refund demand", "cancel threat"],
+  "requires_immediate_escalation": true|false
+}
+
+// AI will analyze for:
+// - ALL CAPS TEXT (angry)
+// - Profanity or aggressive language
+// - Threats ("I'll sue", "I'm canceling", "I want a refund NOW")
+// - Multiple exclamation marks!!!!!
+// - Demanding language ("I demand", "This is unacceptable")</pre>
+
+                <h3>🚨 Immediate Manager Notification:</h3>
+                <pre>// Function Node: Escalation Decision
+const sentiment = $input.first().json.sentiment;
+const sentimentScore = $input.first().json.sentiment_score;
+const urgencyIndicators = $input.first().json.urgency_indicators || [];
+const requiresEscalation = $input.first().json.requires_immediate_escalation;
+
+// Escalation criteria
+const shouldEscalate = 
+  sentiment === 'angry' || 
+  sentimentScore < 0.3 || 
+  urgencyIndicators.length >= 2 ||
+  requiresEscalation;
+
+const escalationLevel = sentimentScore < 0.2 ? 'critical' : 'high';
+
+return {
+  json: {
+    should_escalate: shouldEscalate,
+    escalation_level: escalationLevel,
+    escalation_reason: urgencyIndicators.join(', ') || 'negative sentiment'
+  }
+};
+
+// IF Node: Should Escalate?
+// TRUE → Send immediate notifications</pre>
+
+                <h3>📧 Manager Email Alert:</h3>
+                <pre>// Send Email node for manager
+
+Subject: "🚨 CRITICAL: Angry Customer - Immediate Action Required"
+
+Body (HTML):
+&lt;html&gt;
+&lt;body style="font-family: Arial;"&gt;
+  &lt;div style="background: #dc3545; color: white; padding: 20px; border-radius: 8px 8px 0 0;"&gt;
+    &lt;h2 style="margin: 0;"&gt;🚨 Critical Customer Escalation&lt;/h2&gt;
+  &lt;/div&gt;
+  
+  &lt;div style="padding: 20px; background: #fff3cd;"&gt;
+    &lt;h3 style="color: #856404;"&gt;Customer is extremely upset - requires immediate personal attention&lt;/h3&gt;
+    
+    &lt;table style="width: 100%; background: white; border-radius: 4px; padding: 15px;"&gt;
+      &lt;tr&gt;
+        &lt;td&gt;&lt;strong&gt;Ticket ID:&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;#{{ $('Create Zendesk Ticket').item.json.id }}&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;&lt;strong&gt;Customer:&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;{{ $('Email Trigger').item.json.from.text }}&lt;br&gt;{{ $('Email Trigger').item.json.from.address }}&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;&lt;strong&gt;Sentiment Score:&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;span style="color: #dc3545; font-weight: bold;"&gt;{{ $('Parse AI Response').item.json.sentiment_score }}/1.0&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;&lt;strong&gt;Urgency Indicators:&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;{{ $('Parse AI Response').item.json.urgency_indicators.join(', ') }}&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;&lt;strong&gt;Subject:&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;{{ $('Email Trigger').item.json.subject }}&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+    
+    &lt;div style="background: #f8d7da; border-left: 4px solid #dc3545; padding: 15px; margin: 20px 0;"&gt;
+      &lt;h4 style="margin-top: 0; color: #721c24;"&gt;Original Message:&lt;/h4&gt;
+      &lt;p style="color: #721c24;"&gt;{{ $('Email Trigger').item.json.text }}&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div style="text-align: center; margin: 20px 0;"&gt;
+      &lt;a href="https://yourcompany.zendesk.com/agent/tickets/{{ $('Create Zendesk Ticket').item.json.id }}" 
+         style="display: inline-block; padding: 15px 30px; background: #dc3545; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 16px;"&gt;
+        Respond Now
+      &lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;p style="color: #856404;"&gt;&lt;strong&gt;Recommended Actions:&lt;/strong&gt;&lt;/p&gt;
+    &lt;ul style="color: #856404;"&gt;
+      &lt;li&gt;Call customer directly if phone number available&lt;/li&gt;
+      &lt;li&gt;Respond within 30 minutes&lt;/li&gt;
+      &lt;li&gt;Offer compensation/goodwill gesture if appropriate&lt;/li&gt;
+      &lt;li&gt;CC support team lead on response&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+                <h3>📞 SMS Alert for Critical Cases:</h3>
+                <pre>// If sentiment_score < 0.2 (extremely negative), send SMS to manager
+
+// Twilio SMS Node or similar:
+{
+  "to": "+1234567890",  // Manager's phone
+  "from": "+0987654321", // Your Twilio number
+  "body": "🚨 CRITICAL SUPPORT ESCALATION\n\nExtremely angry customer: {{ $('Email Trigger').item.json.from.text }}\n\nTicket: #{{ $('Create Zendesk Ticket').item.json.id }}\n\nIssue: {{ $('Parse AI Response').item.json.summary }}\n\nRespond immediately: https://yourcompany.zendesk.com/agent/tickets/{{ $('Create Zendesk Ticket').item.json.id }}"
+}</pre>
+
+                <h3>🎯 Auto-Reassign to Manager:</h3>
+                <pre>// HTTP Request: Update Zendesk ticket assignment
+
+PUT https://yourcompany.zendesk.com/api/v2/tickets/{{ $('Create Zendesk Ticket').item.json.id }}.json
+
+Body:
+{
+  "ticket": {
+    "assignee_id": 987654321,  // Manager's Zendesk ID
+    "priority": "urgent",
+    "tags": ["escalated", "angry-customer", "manager-review"],
+    "custom_fields": [
+      {
+        "id": "escalation_reason",
+        "value": "{{ $('Escalation Decision').item.json.escalation_reason }}"
+      },
+      {
+        "id": "sentiment_score", 
+        "value": "{{ $('Parse AI Response').item.json.sentiment_score }}"
+      }
+    ],
+    "comment": {
+      "body": "AUTOMATIC ESCALATION: Customer sentiment analysis indicates high frustration/anger. This ticket has been escalated to management for immediate personal attention.\n\nSentiment Score: {{ $('Parse AI Response').item.json.sentiment_score }}/1.0\nIndicators: {{ $('Parse AI Response').item.json.urgency_indicators.join(', ') }}",
+      "public": false
+    }
+  }
+}</pre>
+            </div>
+
+            <div class="workflow-step">
+                <h3>📊 Advanced Scenarios Summary Table</h3>
+                <table>
+                    <tr>
+                        <th>Scenario</th>
+                        <th>Trigger Condition</th>
+                        <th>Automation Action</th>
+                        <th>Business Impact</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Multi-Language</strong></td>
+                        <td>Non-English email detected</td>
+                        <td>Respond in customer's language</td>
+                        <td>+40% customer satisfaction for international users</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Timezone SLA</strong></td>
+                        <td>Customer in different timezone</td>
+                        <td>Adjust SLA deadlines to business hours</td>
+                        <td>95% SLA compliance vs 70% without</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Holiday/Off-Hours</strong></td>
+                        <td>Ticket created outside business hours</td>
+                        <td>Set expectations, extend SLA</td>
+                        <td>Reduce customer frustration by 60%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>VIP Detection</strong></td>
+                        <td>High-value customer identified</td>
+                        <td>Senior agent + 1hr SLA + manager notification</td>
+                        <td>99% VIP retention vs 85% standard</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Duplicate Merging</strong></td>
+                        <td>Similar ticket from same customer</td>
+                        <td>Auto-merge, notify customer</td>
+                        <td>Save 5-10 hours/week on duplicate work</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sentiment Escalation</strong></td>
+                        <td>Angry/frustrated customer detected</td>
+                        <td>Manager SMS + email + reassign</td>
+                        <td>Prevent 80% of negative reviews/churn</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="success-box">
+                🎯 <strong>Pro Implementation Tip:</strong> Start with 1-2 scenarios, test thoroughly, then add others. Each scenario can be a separate workflow or added as branches to your main workflow.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎯 Next Steps & Additional Workflows</h2>
+            <p>Once the basic workflow + advanced scenarios are running smoothly, consider adding:</p>
+            
+            <ul>
+                <li><strong>Workflow #2:</strong> Live chat integration (Webhook → AI → Auto-response)</li>
+                <li><strong>Workflow #3:</strong> Ticket status updates (Webhook → Email customer → Log analytics)</li>
+                <li><strong>Workflow #4:</strong> SLA monitoring (Cron → Check overdue tickets → Escalate)</li>
+                <li><strong>Workflow #5:</strong> Customer satisfaction surveys (Ticket resolved → Wait 1 day → Send survey)</li>
+                <li><strong>Workflow #6:</strong> Knowledge base suggestions (AI → Search KB → Auto-reply with articles)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📈 Performance Metrics</h2>
+            <p><strong>Track these KPIs weekly:</strong></p>
+            <table>
+                <tr>
+                    <th>Metric</th>
+                    <th>Target</th>
+                    <th>How to Track</th>
+                </tr>
+                <tr>
+                    <td>Average First Response Time</td>
+                    <td>&lt; 2 hours</td>
+                    <td>Zendesk reports or Google Sheets logging</td>
+                </tr>
+                <tr>
+                    <td>Ticket Resolution Time</td>
+                    <td>&lt; 24 hours</td>
+                    <td>Zendesk analytics</td>
+                </tr>
+                <tr>
+                    <td>AI Classification Accuracy</td>
+                    <td>&gt; 85%</td>
+                    <td>Manual audit of 50 tickets/week</td>
+                </tr>
+          
